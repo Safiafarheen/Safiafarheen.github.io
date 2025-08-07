@@ -4,10 +4,206 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Safia Farheen Z R | Portfolio</title>
-  <!-- Styles and scripts are included in your Canvas document -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --primary: #0f172a;
+      --card-bg: #fff;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #0f172a;
+      --text-color: #f9f9f9;
+      --primary: #38bdf8;
+      --card-bg: #1e293b;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 0.5rem 0;
+    }
+
+    .section {
+      padding: 2rem 1.5rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .contact a {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #e2e8f0;
+      font-size: 0.9rem;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+      border: none;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--card-bg);
+      color: var(--text-color);
+      border: 1px solid var(--primary);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .skill-section {
+      margin-bottom: 2rem;
+      display: none;
+    }
+
+    .skill-bar {
+      background-color: #e2e8f0;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .skill-bar-fill {
+      display: block;
+      height: 20px;
+      background-color: var(--primary);
+      width: 0;
+      transition: width 2s ease-in-out;
+    }
+
+    .skill-label {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-label img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--primary);
+      border-radius: 20px;
+      background: var(--card-bg);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .tab-btn.active {
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .skill-label {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      document.querySelectorAll('.skill-bar-fill').forEach(function(bar) {
+        const width = bar.getAttribute('data-width');
+        bar.style.width = width;
+      });
+
+      const tabs = document.querySelectorAll('.tab-btn');
+      const sections = document.querySelectorAll('.skill-section');
+
+      tabs.forEach((tab, i) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          sections.forEach(s => s.style.display = 'none');
+          tab.classList.add('active');
+          sections[i].style.display = 'block';
+        });
+      });
+
+      tabs[0].click();
+
+      const toggleBtn = document.getElementById('theme-toggle');
+      toggleBtn.addEventListener('click', () => {
+        document.body.dataset.theme = document.body.dataset.theme === 'dark' ? '' : 'dark';
+      });
+    };
+  </script>
 </head>
 <body>
-  <!-- Portfolio content from your Canvas document -->
-  <!-- To get the full content, download the file from Canvas -->
-</body>
-</html>
+  <button class="toggle-btn" id="theme-toggle">🌓 Toggle Theme</button>
+  <header>
+    <h1>Safia Farheen Z R</h1>
+    <p>Java Full Stack Developer</p>
+    <p>📍 Chengalpattu | 📧 <a href="mailto:saf72606@gmail.com" style="color:white;">saf72606@gmail.com</a> | ☎ 7358411706</p>
+    <p><a href="https://github.com/safiafarheen" target="_blank" style="color:white;">GitHub</a> | <a href="https://linkedin.com/in/safiafarheen" target="_blank" style="color:white;">LinkedIn</a></p>
+    <a class="button" href="Safia_Farheen_Z_R.pdf" download>📄 Download Resume</a>
+  </header>
