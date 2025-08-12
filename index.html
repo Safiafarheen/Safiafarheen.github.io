@@ -1,216 +1,441 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Safia Farheen Z R | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Safia Farheen Z R — Portfolio</title>
+
+  <!-- Devicon icons (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
+
   <style>
-    :root {
-      --bg-color: #f9f9f9;
-      --text-color: #333;
-      --primary: #0f172a;
-      --card-bg: #fff;
+    :root{
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0f172a;
+      --accent-2: #2563eb;
+      --radius: 10px;
+      --shadow: 0 6px 18px rgba(15,23,42,0.06);
     }
-    [data-theme="dark"] {
-      --bg-color: #0f172a;
-      --text-color: #f9f9f9;
-      --primary: #38bdf8;
-      --card-bg: #1e293b;
+    [data-theme="dark"]{
+      --bg: #071024;
+      --card: #071c2e;
+      --text: #e6f0ff;
+      --muted: #cbd5e1;
+      --accent: #38bdf8;
+      --accent-2: #60a5fa;
+      --shadow: 0 6px 18px rgba(0,0,0,0.5);
     }
-    * {
-      box-sizing: border-box;
+
+    /* Basic reset */
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.5;
       scroll-behavior: smooth;
+      padding-top:72px; /* space for fixed nav */
     }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      transition: background 0.3s, color 0.3s;
+
+    /* NAV */
+    nav{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:64px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6));
+      border-bottom:1px solid rgba(15,23,42,0.06);
+      z-index:1200;
+      backdrop-filter: blur(6px);
     }
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: var(--primary);
-      color: white;
-      display: flex;
-      justify-content: center;
-      padding: 0.5rem;
-      gap: 1rem;
-      z-index: 1000;
+    [data-theme="dark"] nav{
+      background:linear-gradient(180deg, rgba(7,28,44,0.9), rgba(7,28,44,0.6));
+      border-bottom:1px solid rgba(255,255,255,0.04);
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    nav a.active {
-      text-decoration: underline;
-    }
-    header {
-      background-color: var(--primary);
-      color: white;
-      padding: 4rem 1rem 2rem;
-      text-align: center;
-      margin-top: 2.5rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    header p {
-      margin: 0.5rem 0;
-    }
-    .section {
-      padding: 2rem 1.5rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .button {
-      display: inline-block;
-      background-color: var(--primary);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      margin-top: 1rem;
+    nav .nav-inner{ max-width:1100px; width:100%; display:flex; align-items:center; justify-content:space-between; padding:0 18px;}
+    nav .links{ display:flex; gap:12px; align-items:center; }
+    nav a{ color:var(--muted); text-decoration:none; font-weight:600; padding:8px 10px; border-radius:8px; font-size:14px;}
+    nav a.active{ color:var(--accent); background:rgba(0,0,0,0.03); }
+    [data-theme="dark"] nav a.active{ background: rgba(56,189,248,0.08); }
+
+    /* Theme toggle button */
+    #theme-toggle {
       border: none;
-      text-decoration: none;
+      background: var(--card);
+      color: var(--text);
+      padding:8px 12px;
+      border-radius: 999px;
+      cursor:pointer;
+      font-weight:600;
+      box-shadow: var(--shadow);
     }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #e2e8f0;
-      font-size: 0.9rem;
+    [data-theme="dark"] #theme-toggle{ background:#042033; color:var(--text); }
+
+    /* Layout container */
+    .container{ max-width:1100px; margin:28px auto; padding: 0 18px; }
+
+    /* Header */
+    header.card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+      text-align:center;
     }
-    .toggle-btn {
-      position: fixed;
-      top: 0.5rem;
-      right: 0.5rem;
-      background: var(--card-bg);
-      color: var(--text-color);
-      border: 1px solid var(--primary);
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      cursor: pointer;
-      z-index: 1001;
+    header.card h1{ margin:0; font-size:28px; letter-spacing:0.2px; }
+    header.card p.role{ margin:8px 0 0; color:var(--muted); font-weight:600; }
+    .contact-row{
+      margin-top:14px;
+      display:flex;
+      gap:8px;
+      justify-content:center;
+      flex-wrap:wrap;
     }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-      nav {
-        flex-wrap: wrap;
-      }
+    .cta{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 12px;
+      background:var(--accent-2);
+      color:#fff;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      margin-top:14px;
+    }
+    .icon-link{
+      background:var(--card);
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight:600;
+      display:inline-flex; gap:8px; align-items:center;
+      box-shadow: var(--shadow);
+    }
+
+    /* Sections */
+    section{
+      margin-top:20px;
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+      opacity:0; transform:translateY(22px);
+      transition: all 700ms ease;
+    }
+    section.visible{ opacity:1; transform:translateY(0); }
+
+    h2{ margin:0 0 12px 0; font-size:18px; border-bottom:3px solid rgba(0,0,0,0.04); padding-bottom:8px; color:var(--accent-2); }
+    p.small{ color:var(--muted); margin:8px 0 0; }
+
+    /* Skills layout */
+    .skills-top{ display:flex; gap:18px; align-items:flex-start; flex-wrap:wrap; }
+    .skill-tabs{ min-width:180px; }
+    .tab-btn{ display:block; margin-bottom:10px; padding:8px 10px; border-radius:8px; border:1px solid rgba(0,0,0,0.06); background:transparent; cursor:pointer; color:var(--muted); text-align:left; font-weight:700;}
+    .tab-btn.active{ background:var(--accent-2); color:white; border-color:transparent; }
+    .skill-list{ flex:1; }
+    .skill-item{ display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+    .skill-item img, .skill-item i { width:28px; height:28px; display:inline-block; }
+    .skill-bar { flex:1; height:12px; background: rgba(0,0,0,0.06); border-radius:999px; overflow:hidden; }
+    .skill-fill{ height:100%; width:0; background:linear-gradient(90deg,var(--accent-2),var(--accent)); border-radius:999px; transition:width 1400ms ease; }
+
+    /* Cards grid for certifications/projects */
+    .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px; }
+    .card-small{ padding:12px; border-radius:8px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.01)); border:1px solid rgba(0,0,0,0.03); }
+    .muted{ color:var(--muted); }
+
+    /* Projects: title + tech + role */
+    .project-title{ font-weight:700; margin:0 0 6px; }
+    .meta{ font-size:13px; color:var(--muted); margin:6px 0 0; }
+
+    /* Contact */
+    .contact-list{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+
+    footer{ margin:28px 0; text-align:center; color:var(--muted); font-size:13px; }
+
+    /* Responsive tweaks */
+    @media (max-width:880px){
+      .skills-top{ flex-direction:column; }
+      nav .nav-inner{ padding:0 12px; }
+    }
+    @media (max-width:520px){
+      header.card{ padding:18px; }
+      .cta{ font-size:14px; padding:8px 10px; }
     }
   </style>
-  <script>
-    window.onload = function () {
-      // Smooth section highlight
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll("nav a");
-      window.addEventListener("scroll", () => {
-        let current = "";
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - 60;
-          if (pageYOffset >= sectionTop) {
-            current = section.getAttribute("id");
-          }
-        });
-        navLinks.forEach(a => {
-          a.classList.remove("active");
-          if (a.getAttribute("href") === "#" + current) {
-            a.classList.add("active");
-          }
-        });
-      });
-      // Theme toggle
-      document.getElementById('theme-toggle').addEventListener('click', () => {
-        document.body.dataset.theme = document.body.dataset.theme === 'dark' ? '' : 'dark';
-      });
-    };
-  </script>
 </head>
 <body>
-  <button class="toggle-btn" id="theme-toggle">🌓 Theme</button>
+
+  <!-- Nav -->
   <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-inner">
+      <div class="links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div>
+        <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
+      </div>
+    </div>
   </nav>
-  <header>
-    <h1>Safia Farheen Z R</h1>
-    <p>Java Full Stack Developer</p>
-    <p>📍 Chengalpattu | 📧 <a href="mailto:saf72606@gmail.com" style="color:white;">saf72606@gmail.com</a> | ☎ 7358411706</p>
-    <p>
-      <a href="https://github.com/safiafarheen" target="_blank" style="color:white;">GitHub</a> |
-      <a href="https://linkedin.com/in/safiafarheen" target="_blank" style="color:white;">LinkedIn</a>
-    </p>
-    <a class="button" href="Safia_Farheen_Z_R.pdf" download>📄 Download Resume</a>
-  </header>
 
-  <section class="section" id="about">
-    <h2>About Me</h2>
-    <p>Final-year Electronics and Communication Engineering student passionate about software development, with training in Java Full Stack Development, embedded systems, and IoT. Skilled in developing end-to-end solutions using modern web and backend technologies.</p>
-  </section>
+  <main class="container">
 
-  <section class="section" id="skills">
-    <h2>Skills</h2>
-    <p><b>Frontend:</b> HTML, CSS, JavaScript, React</p>
-    <p><b>Backend:</b> Java, Spring Boot, Hibernate, JUnit</p>
-    <p><b>Database:</b> MySQL</p>
-    <p><b>Tools:</b> Git, GitHub, KiCad, Proteus, MPLAB, MATLAB, MS Office</p>
-  </section>
+    <!-- Header -->
+    <header class="card">
+      <h1>Safia Farheen Z R</h1>
+      <p class="role">Java Full Stack Developer</p>
 
-  <section class="section" id="certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li>C Spoken Tutorial Project — IIT Bombay</li>
-      <li>C++ Spoken Tutorial Project — IIT Bombay</li>
-      <li>Java Spoken Tutorial Project — IIT Bombay</li>
-      <li>Python — GUVI & IIT Madras</li>
-    </ul>
-  </section>
+      <div class="contact-row" style="margin-top:14px;">
+        <a class="icon-link" href="mailto:saf72606@gmail.com">📧 saf72606@gmail.com</a>
+        <a class="icon-link" href="tel:+917358411706">📞 7358411706</a>
+        <a class="icon-link" href="https://github.com/Safiafarheen" target="_blank">💻 GitHub</a>
+        <a class="icon-link" href="https://www.linkedin.com/in/safiafarheen" target="_blank">🔗 LinkedIn</a>
+        <a class="cta" href="Safia_Farheen_Z_R.pdf" download>📄 Download Resume</a>
+      </div>
+    </header>
 
-  <section class="section" id="achievements">
-    <h2>Achievements</h2>
-    <ul>
-      <li>2nd Runner Up — Capgemini’s Tech4Positive Future Challenge 2024 (Youth Voice Edition)</li>
-    </ul>
-  </section>
+    <!-- About -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p class="small">A motivated fresher seeking a challenging role to apply and enhance my technical skills while contributing to the growth of the organization.</p>
+    </section>
 
-  <section class="section" id="projects">
-    <h2>Projects</h2>
-    <h3>Placement Management System</h3>
-    <p>A web-based system to manage student placement activities. <br><b>Tech used:</b> Java, Spring Boot, JDBC, SQL, HTML, CSS, JavaScript, React. <br><b>My Role:</b> Database design & backend logic.</p>
-    <h3>Smart Parking System</h3>
-    <p>IoT-based system to monitor and manage parking availability. <br><b>Tech used:</b> Embedded C, IoT modules, Blynk app. <br><b>My Role:</b> Hardware setup and embedded programming.</p>
-    <h3>Smart Door Locking System</h3>
-    <p>Automated door lock using IoT for secure access. <br><b>Tech used:</b> Embedded C, IoT modules, Blynk app. <br><b>My Role:</b> Circuit design and coding.</p>
-    <h3>Home Automation using Blynk</h3>
-    <p>IoT-based system for controlling home appliances via smartphone. <br><b>Tech used:</b> Embedded C, IoT modules, Blynk app. <br><b>My Role:</b> Hardware design and code implementation.</p>
-    <h3>Gait Analysis for Long-Distance Runners</h3>
-    <p>Analyzed running posture and performance using MediaPipe & OpenCV. <br><b>Tech used:</b> Python, MediaPipe, OpenCV, ResNet50, Streamlit. <br><b>My Role:</b> Model training, real-time analysis, and visualization.</p>
-  </section>
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
 
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:saf72606@gmail.com">saf72606@gmail.com</a></p>
-    <p>📞 7358411706</p>
-  </section>
+      <div class="skills-top">
+        <div class="skill-tabs" aria-hidden="false">
+          <button class="tab-btn active" data-tab="frontend">Frontend</button>
+          <button class="tab-btn" data-tab="backend">Backend</button>
+        </div>
 
-  <footer>
-    &copy; 2025 Safia Farheen Z R. All Rights Reserved.
-  </footer>
+        <div class="skill-list">
+          <div class="skill-section" id="frontend">
+            <div class="skill-item">
+              <i class="devicon-react-original"></i>
+              <div style="min-width:120px;font-weight:700;">React</div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <i class="devicon-html5-plain"></i>
+              <div style="min-width:120px;font-weight:700;">HTML5 / CSS3</div>
+              <div class="skill-bar"><div class="skill-fill" data-width="92%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <i class="devicon-javascript-plain"></i>
+              <div style="min-width:120px;font-weight:700;">JavaScript</div>
+              <div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-section" id="backend" style="display:none;">
+            <div class="skill-item">
+              <i class="devicon-java-plain"></i>
+              <div style="min-width:120px;font-weight:700;">Java</div>
+              <div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <i class="devicon-spring-plain"></i>
+              <div style="min-width:120px;font-weight:700;">Spring Boot</div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <i class="devicon-mysql-plain"></i>
+              <div style="min-width:120px;font-weight:700;">MySQL</div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <i class="devicon-java-plain"></i>
+              <div style="min-width:120px;font-weight:700;">JUnit</div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:10px;">Tooltips: hover a skill name for more context (desktop).</p>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <div class="grid">
+        <div class="card-small">
+          Capgemini–TNS India Foundation “Campus to Technical Careers Training Program” — Full Stack Development (SQL, Core Java, JPA/Hibernate, Spring, Spring Boot, React)
+        </div>
+        <div class="card-small">
+          C,Spoken Tutorial Project IIT Bombay
+        </div>
+        <div class="card-small">
+          C++, Spoken Tutorial Project IIT Bombay
+        </div>
+        <div class="card-small">
+          Java, Spoken Tutorial Project IIT Bombay
+        </div>
+        <div class="card-small">
+          Python ,GUVI and IITM
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <ul class="muted">
+        <li>2nd Runner Up — Capgemini’s Tech4Positive Future Challenge 2024 (Youth Voice Edition)</li>
+  
+      </ul>
+    </section>
+
+    <!-- Projects (exact titles from resume; descriptions expanded per your request) -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+
+        <div class="card-small">
+          <div class="project-title">E-Commerce Website (2023)</div>
+          <div class="muted"><b>How it works:</b> A full-stack e-commerce platform with product listings, cart, and basic order flow. Frontend interacts with backend REST APIs for product and order handling.</div>
+          <div class="meta"><strong>Tech:</strong> Java (backend), Angular (frontend)</div>
+          <div class="meta"><strong>Role:</strong> Implemented backend endpoints and integrated Angular UI with REST APIs to display products and manage orders.</div>
+        </div>
+
+        <div class="card-small">
+          <div class="project-title">Placement Management System (2024)</div>
+          <div class="muted"><b>How it works:</b> A system to manage student placements, company drives, and student registrations. Includes CRUD for student/company data, search and filtering features for recruiters and admins.</div>
+          <div class="meta"><strong>Tech:</strong> Java, Spring Boot, JDBC, MySQL, HTML, CSS, JavaScript, AngularJS, NodeJS</div>
+          <div class="meta"><strong>Role:</strong> Developed backend services using Spring Boot and JDBC, implemented database schemas, and integrated frontend forms and views for placement workflows.</div>
+        </div>
+
+        <div class="card-small">
+          <div class="project-title">To-Do List App (2024)</div>
+          <div class="muted"><b>How it works:</b>A task management app with add/edit/delete tasks and simple ML-based prioritization/insights (experimental).</div>
+          <div class="meta"><strong>Tech:</strong> Python, Machine Learning</div>
+          <div class="meta"><strong>Role:</strong> Built core task logic and prototyped ML features to suggest prioritization and categorize tasks.</div>
+        </div>
+
+        <div class="card-small">
+          <div class="project-title">Gait Analysis for long distance runners (2024 - 2025)</div>
+          <div class="muted"><b>How it works:</b> Video-based gait analysis capturing joint angles and movement symmetry, producing real-time visual feedback, angle graphs, and performance/authentication using gait features.</div>
+          <div class="meta"><strong>Tech:</strong> Python, OpenCV, MediaPipe, ResNet50, Streamlit</div>
+          <div class="meta"><strong>Role:</strong> Designed and implemented the gait feature extraction, developed angle-change visualizations, integrated a ResNet50-based recognition module and Streamlit UI for visualization.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-list">
+        <a class="icon-link" href="mailto:saf72606@gmail.com">📧 saf72606@gmail.com</a>
+        <a class="icon-link" href="tel:+917358411706">📞 7358411706</a>
+        <a class="icon-link" href="https://github.com/Safiafarheen" target="_blank">💻 github.com/Safiafarheen</a>
+        <a class="icon-link" href="https://www.linkedin.com/in/safiafarheen" target="_blank">🔗 linkedin.com/in/safiafarheen</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Safia Farheen Z R
+    </footer>
+  </main>
+
+  <script>
+    /* ---------- Theme toggle (persist in localStorage) ---------- */
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('portfolio_theme');
+    if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = (current === 'dark') ? '' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('portfolio_theme', next);
+    });
+
+    /* ---------- Smooth reveal on scroll ---------- */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('section').forEach(s => observer.observe(s));
+
+    /* ---------- Active nav highlight ---------- */
+    const navLinks = document.querySelectorAll('nav .links a, nav .links a');
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    function setActiveNav(){
+      const scrollPos = window.scrollY + 120; // offset to pick section
+      sections.forEach(sec => {
+        if (sec.offsetTop <= scrollPos && sec.offsetTop + sec.offsetHeight > scrollPos){
+          document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+          const sel = document.querySelector('nav a[href="#' + sec.id + '"]');
+          if (sel) sel.classList.add('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', setActiveNav);
+    setActiveNav();
+
+    /* ---------- Smooth tab behavior + animate skill bars ---------- */
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const frontend = document.getElementById('frontend');
+    const backend = document.getElementById('backend');
+    function showTab(tab){
+      if(tab === 'frontend'){
+        frontend.style.display = 'block';
+        backend.style.display = 'none';
+      } else {
+        frontend.style.display = 'none';
+        backend.style.display = 'block';
+      }
+      tabButtons.forEach(b => b.classList.remove('active'));
+      document.querySelector('.tab-btn[data-tab="'+tab+'"]').classList.add('active');
+      // animate visible fills
+      document.querySelectorAll('.skill-fill').forEach(f => {
+        const p = f.getAttribute('data-width') || '0%';
+        // small delay for nicer effect
+        setTimeout(()=> f.style.width = p, 200);
+      });
+    }
+    // initialize tab buttons
+    tabButtons.forEach(b => {
+      b.addEventListener('click', () => showTab(b.getAttribute('data-tab')));
+    });
+    // set dataset attribute so showTab finds them
+    document.querySelectorAll('.tab-btn')[0].setAttribute('data-tab','frontend');
+    document.querySelectorAll('.tab-btn')[1].setAttribute('data-tab','backend');
+    // show default
+    showTab('frontend');
+
+    /* ---------- ensure nav links smooth scroll and close behavior ---------- */
+    document.querySelectorAll('nav a').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        // default behavior handles smooth scroll; ensure active is set
+        document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));
+        a.classList.add('active');
+      });
+    });
+
+    /* ---------- tooltips (desktop) - simple title attribute is available by default ---------- */
+  </script>
 </body>
 </html>
