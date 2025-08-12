@@ -1,213 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Safia Farheen Z R | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Safia Farheen Z R — Resume</title>
   <style>
     :root {
-      --bg-color: #f9f9f9;
-      --text-color: #333;
       --primary: #0f172a;
-      --card-bg: #fff;
+      --secondary: #475569;
+      --accent: #2563eb;
+      --bg: #f9fafb;
+      --card-bg: #ffffff;
     }
-
-    [data-theme="dark"] {
-      --bg-color: #0f172a;
-      --text-color: #f9f9f9;
-      --primary: #38bdf8;
-      --card-bg: #1e293b;
-    }
-
     body {
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
+      padding: 0;
+      color: var(--primary);
       line-height: 1.6;
-      transition: background 0.3s, color 0.3s;
     }
-
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
     header {
-      background-color: var(--primary);
+      background: var(--primary);
       color: white;
-      padding: 2rem 1rem;
+      padding: 30px 20px;
       text-align: center;
+      border-radius: 8px;
     }
-
-    header h1 { margin: 0; font-size: 2rem; }
-    header p { margin: 0.4rem 0; }
-
-    .container { max-width: 900px; margin: auto; padding: 1rem; }
-    .section { padding: 1.2rem 0; }
-
-    h2 { border-bottom: 2px solid var(--primary); padding-bottom: 0.4rem; margin-bottom: 0.8rem; }
-
-    a { color: var(--primary); text-decoration: none; }
-    .button { display:inline-block; background:var(--primary); color:#fff; padding:0.45rem 0.9rem; border-radius:6px; text-decoration:none; }
-
-    /* Skills */
-    .tabs { display:flex; gap:0.6rem; justify-content:center; margin-bottom:1rem; flex-wrap:wrap; }
-    .tab-btn { padding:0.4rem 0.8rem; border-radius:20px; border:1px solid var(--primary); background:var(--card-bg); cursor:pointer; font-weight:600; color:var(--primary); }
-    .tab-btn.active { background:var(--primary); color:#fff; }
-    .skill-section { display:none; }
-    .skill-label { display:flex; align-items:center; gap:10px; font-weight:600; margin-top:0.6rem; }
-    .skill-label img { width:22px; height:22px; }
-    .skill-bar { background:#e6eef6; border-radius:20px; overflow:hidden; margin:0.4rem 0 0.9rem; }
-    .skill-bar-fill { height:18px; width:0; background:var(--primary); transition:width 1.8s ease-in-out; }
-
-    /* Layout */
-    .row { display:flex; gap:1.2rem; flex-wrap:wrap; }
-    .col { flex:1 1 300px; }
-    ul { margin:0; padding-left:1.1rem; }
-
-    .toggle-btn { position:fixed; top:1rem; right:1rem; background:var(--card-bg); color:var(--text-color); border:1px solid var(--primary); padding:0.4rem 0.9rem; border-radius:20px; cursor:pointer; }
-
-    footer { text-align:center; padding:1rem; margin-top:1.5rem; background:transparent; color:var(--text-color); }
-
-    @media (max-width:700px){ header h1{font-size:1.5rem;} .row{flex-direction:column;} }
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .contact {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .contact a {
+      background: var(--accent);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .contact a:hover {
+      background: #1d4ed8;
+    }
+    section {
+      background: var(--card-bg);
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    h2 {
+      margin-top: 0;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 4px;
+      font-size: 18px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .col {
+      flex: 1 1 300px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 12px;
+      font-size: 13px;
+      color: var(--secondary);
+    }
+    @media (max-width:640px){
+      header { padding: 20px; }
+      h1 { font-size: 22px; }
+    }
   </style>
 </head>
-<body data-theme="">
-  <button class="toggle-btn" id="theme-toggle">🌓 Toggle Theme</button>
+<body>
+  <div class="container">
+    <header>
+      <h1>Safia Farheen Z R</h1>
+      <p>Java Full Stack Developer</p>
+      <div class="contact">
+        <a href="mailto:saf72606@gmail.com">📧 Email</a>
+        <a href="tel:7358411706">📞 Call</a>
+        <a href="https://github.com/safiafarheen" target="_blank">💻 GitHub</a>
+        <a href="https://www.linkedin.com/in/safiafarheen" target="_blank">🔗 LinkedIn</a>
+        <a href="Safia_Farheen_Z_R.pdf" download>📄 Resume</a>
+      </div>
+    </header>
 
-  <header>
-    <h1>Safia Farheen Z R</h1>
-    <p>Java Full Stack Developer</p>
-    <p>📍 Chengalpattu · 📧 <a href="mailto:saf72606@gmail.com">saf72606@gmail.com</a> · ☎ 7358411706</p>
-    <p><a href="https://github.com/Safiafarheen" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/safiafarheen" target="_blank">LinkedIn</a></p>
-    <p style="margin-top:0.6rem;"><a class="button" href="Safia_Farheen_Z_R.pdf" download>📄 Download Resume</a></p>
-  </header>
-
-  <main class="container">
-
-    <!-- About Me -->
-    <section class="section" id="about">
-      <h2>About Me</h2>
+    <section>
+      <h2>Objective</h2>
       <p>A motivated fresher seeking a challenging role to apply and enhance my technical skills while contributing to the growth of the organization.</p>
     </section>
 
-    <!-- Skills -->
-    <section class="section" id="skills">
-      <h2>Skills</h2>
-      <div class="tabs">
-        <div class="tab-btn active">Frontend</div>
-        <div class="tab-btn">Backend</div>
-      </div>
-
-      <div class="skill-section" id="frontend">
-        <h3>Frontend</h3>
-        <div class="skill-label" title="Component-based frontend using React"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"/>React</div>
-        <div class="skill-bar"><span class="skill-bar-fill" data-width="90%"></span></div>
-
-        <div class="skill-label" title="HTML5 and semantic markup"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"/>HTML</div>
-        <div class="skill-bar"><span class="skill-bar-fill" data-width="95%"></span></div>
-
-        <div class="skill-label" title="Modern CSS and responsive layouts"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"/>CSS</div>
-        <div class="skill-bar"><span class="skill-bar-fill" data-width="90%"></span></div>
-
-        <div class="skill-label" title="JavaScript ES6+ for interactivity"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"/>JavaScript</div>
-        <div class="skill-bar"><span class="skill-bar-fill" data-width="88%"></span></div>
-      </div>
-
-      <div class="skill-section" id="backend">
-        <h3>Backend</h3>
-        <div class="skill-label" title="Core language expertise"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"/>Java</div>
-        <div class="skill-bar"><span class="skill-bar-fill" data-width="95%"></span></div>
-
-        <div class="skill-label" title="REST APIs with Spring Boot"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring"/>Spring Boot</div>
-        <div class="skill-bar"><span class="skill-bar-fill" data-width="90%"></span></div>
-
-        <div class="skill-label" title="Unit testing with JUnit"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="JUnit"/>JUnit</div>
-        <div class="skill-bar"><span class="skill-bar-fill" data-width="80%"></span></div>
-
-        <div class="skill-label" title="Relational DBMS"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"/>MySQL</div>
-        <div class="skill-bar"><span class="skill-bar-fill" data-width="85%"></span></div>
-      </div>
-    </section>
-
-    <!-- Certifications -->
-    <section class="section" id="certifications">
-      <h2>Certifications</h2>
+    <section>
+      <h2>Education</h2>
       <ul>
-        <li>Java Fullstack Development, TNS India Foundation (Capgemini)</li>
-        <li>C — Spoken Tutorial Project, IIT Bombay</li>
-        <li>Java — Spoken Tutorial Project, IIT Bombay</li>
-        <li>Python — GUVI & IIT Madras</li>
+        <li><strong>B.E. in Electronics and Communication Engineering</strong> — Mohammed Sathak AJ College of Engineering, Chennai (2021 - 2025) — CGPA: 7.8</li>
+        <li><strong>12th Grade</strong> — Little Jacky Matriculation Higher Secondary School, Chengalpattu — 86%</li>
+        <li><strong>10th Grade</strong> — St. Mary’s Girls Higher Secondary School, Chengalpattu — 79%</li>
       </ul>
     </section>
 
-    <!-- Achievements -->
-    <section class="section" id="achievements">
+    <section>
+      <h2>Internships</h2>
+      <ul>
+        <li><strong>ZOHO TECHS</strong> — Java with Angular UI Development (Remote), July 2023. Developed an e-commerce website using Java and Angular.</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>Achievements</h2>
       <ul>
-        <li>2nd Runner Up — Capgemini’s Tech4Positive Future Challenge 2024 (Youth Voice Edition)</li>
+        <li>Participated in Capgemini’s Tech4 Positive Future Challenge 2024 (Youth Voice Edition) — 2nd runner up</li>
       </ul>
     </section>
 
-    <!-- Projects -->
-    <section class="section" id="projects">
+    <section>
+      <h2>Training</h2>
+      <ul>
+        <li>Completed TNSIF Java Fullstack Development training</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>Projects</h2>
       <div class="row">
         <div class="col">
-          <h3>E-Commerce Website (2023)</h3>
+          <strong>E-Commerce Website (2023)</strong>
           <p>Developed with Java and Angular UI.</p>
         </div>
         <div class="col">
-          <h3>Placement Management System (2024)</h3>
+          <strong>Placement Management System (2024)</strong>
           <p>Built with Java, Spring Boot, JDBC, SQL, HTML, CSS, JavaScript, AngularJS, NodeJS.</p>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <h3>To-Do List App (2024)</h3>
-          <p>Built with Python and Machine Learning.</p>
+          <strong>To-Do List App (2024)</strong>
+          <p>Built with Python, Machine Learning.</p>
         </div>
         <div class="col">
-          <h3>Gait Analysis for Long Distance Runners (2024 - 2025)</h3>
-          <p>Built with Python, Machine Learning, and Image Processing.</p>
+          <strong>Gait Analysis for long distance runners (2024 - 2025)</strong>
+          <p>Built with Python, Machine Learning, Image Processing.</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="section" id="contact">
-      <h2>Contact</h2>
-      <p>If you'd like to get in touch, email me at <a href="mailto:saf72606@gmail.com">saf72606@gmail.com</a> or call 7358411706.</p>
-      <p>You can also message me on <a href="https://www.linkedin.com/in/safiafarheen" target="_blank">LinkedIn</a>.</p>
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Technical:</strong> Java, C, C++, Python, HTML, CSS, JavaScript, MySQL, MS Office</li>
+        <li><strong>Soft:</strong> Problem-solving, Team collaboration, Communication, Adaptability, Analytical ability, Listening skill</li>
+        <li><strong>Languages:</strong> Tamil (Native), English (Fluent), Hindi (Basic), Urdu (Fluent)</li>
+      </ul>
     </section>
 
-  </main>
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>C — Spoken Tutorial Project, IIT Bombay</li>
+        <li>C++ — Spoken Tutorial Project, IIT Bombay</li>
+        <li>Java — Spoken Tutorial Project, IIT Bombay</li>
+        <li>Python — GUVI & IIT Madras</li>
+      </ul>
+    </section>
 
-  <footer>
-    &copy; 2025 Safia Farheen Z R
-  </footer>
-
-  <script>
-    // theme toggle
-    document.getElementById('theme-toggle').addEventListener('click', function(){
-      document.body.dataset.theme = document.body.dataset.theme === 'dark' ? '' : 'dark';
-    });
-
-    // tabs
-    const tabs = Array.from(document.querySelectorAll('.tab-btn'));
-    const sections = Array.from(document.querySelectorAll('.skill-section'));
-    tabs.forEach((tab, i) => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        sections.forEach(s => s.style.display = 'none');
-        tab.classList.add('active');
-        sections[i].style.display = 'block';
-        // animate bars when shown
-        sections[i].querySelectorAll('.skill-bar-fill').forEach(b => b.style.width = b.getAttribute('data-width'));
-      });
-    });
-    // show first tab
-    if(tabs.length) tabs[0].click();
-
-    // initial animate for visible sections
-    document.querySelectorAll('.skill-bar-fill').forEach(b => b.style.width = b.getAttribute('data-width'));
-  </script>
+    <footer>
+      © 2025 Safia Farheen Z R — Page 1 of 1
+    </footer>
+  </div>
 </body>
 </html>
