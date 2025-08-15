@@ -3,23 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Safia Farheen Z R | Modern Portfolio</title>
+<title>Safia Farheen Z R | Enhanced Portfolio</title>
 <style>
+:root {
+  --bg-gradient-light: linear-gradient(135deg, #fafafa 15%, #eaeaea 100%);
+  --bg-gradient-dark: linear-gradient(135deg, #301844 10%, #213150 100%);
+  --primary: #3636b3;
+  --accent: #c084fc;
+}
 html, body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
   scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-:root {
-  --bg-gradient-light: linear-gradient(135deg, #c6e6fb 15%, #d8b4fe 100%);
-  --bg-gradient-dark: linear-gradient(135deg, #301844 10%, #213150 100%);
-  --primary: #3636b3;
-  --accent: #c084fc;
-}
-body {
   background: var(--bg-gradient-light);
   color: #222;
   transition: background 0.7s, color 0.7s;
@@ -34,7 +31,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   color: #fff;
   letter-spacing: 2px;
@@ -51,8 +48,8 @@ header {
 }
 .theme-toggle {
   position: absolute;
-  right: 36px;
-  top: 22px;
+  right: 32px;
+  top: 24px;
   font-size: 1.7em;
   cursor: pointer;
   background: #fafafa99;
@@ -93,6 +90,11 @@ nav a {
   cursor: pointer;
   display: inline-block;
 }
+nav a.active, nav a:focus {
+  background: #dad1ff;
+  color: #5e2cc7;
+  box-shadow: 0 2px 12px #987def44;
+}
 nav a:hover {
   background: #faf7ff;
   color: var(--accent);
@@ -100,32 +102,23 @@ nav a:hover {
 }
 body.dark-mode nav a { color: #ebf4ff;}
 main {
-  overflow: hidden;
-  position: relative;
+  padding: 16px 20px 40px 20px;
+  max-width: 960px;
+  margin: 0 auto;
   min-height: 100vh;
 }
-
-/* Horizontal slide container: Each section is 100vw, flex row box */
-.sections-horizontal {
-  display: flex;
-  flex-direction: row;
-  transition: transform 0.7s cubic-bezier(.77,.18,.42,1);
-  will-change: transform;
-}
 section {
-  min-width: 100vw;
-  max-width: 900px;
-  margin: 36px auto 0 auto;
   background: linear-gradient(120deg,#fff 75%,#ebf4ff 100%);
-  padding: 32px 32px 28px 32px;
+  margin-bottom: 32px;
   border-radius: 22px;
   box-shadow: 0 8px 38px 0px #23203b13;
+  padding: 28px 32px 28px 32px;
   opacity: 0;
-  transform: translateY(65px) scale(.98);
-  transition: opacity 1.1s cubic-bezier(.42,0,.58,1),
-              transform 1.0s cubic-bezier(.55,0,.1,1),
-              background 0.8s, color 0.8s;
-  margin-bottom: 24px;
+  transform: translateY(52px) scale(.97);
+  transition: 
+    opacity 1.1s cubic-bezier(.42,0,.58,1),
+    transform 1.0s cubic-bezier(.55,0,.1,1),
+    background 0.8s, color 0.8s;
 }
 body.dark-mode section { background: linear-gradient(115deg, #392e4b 60%, #1e2c38 100%); color: #ebf4ff;}
 section.visible {
@@ -145,156 +138,43 @@ body.dark-mode h2 { color: #c084fc;}
 ul { padding-left: 22px;}
 li { margin: 7px 0;}
 
-/* Skills - modern accordion split */
-#skills-main {
-  display: flex;
-  gap: 50px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+#achievements ul li {
+  font-weight: 500;
+  color: #249f82;
+  margin-bottom: 11px;
 }
-.skill-category {
-  flex: 1 1 280px;
-  background: linear-gradient(135deg, #f0ecff, #def0f8);
-  padding: 20px 24px;
-  border-radius: 14px;
-  box-shadow: 0 0 18px #a58fff49;
-  transition: background 0.5s, box-shadow 0.5s;
-  cursor: pointer;
-  margin-bottom: 15px;
-  outline: none;
-  position: relative;
-}
-body.dark-mode .skill-category {
-  background: linear-gradient(135deg, #392e4b, #201c3f);
-  box-shadow: 0 0 18px #d3bae8;
-}
-.skill-category h3 {
-  margin-top: 0;
-  color: #5736ef;
-  transition: color 0.5s;
-}
-body.dark-mode .skill-category h3 {
-  color: #a57cff;
-}
-.skill-list {
-  max-height: 0;
-  overflow-y: hidden;
-  margin: 0;
-  padding-left: 16px;
-  list-style-type: disc;
-  transition: max-height 0.7s ease, padding 0.6s ease;
-}
-.skill-category.open {
-  background: #e8e1fd;
-  box-shadow: 0 0 40px #7d69da40;
-}
-body.dark-mode .skill-category.open {
-  background: #4e397d;
-  box-shadow: 0 0 23px #a69bff81;
-}
-.skill-category.open .skill-list {
-  max-height: 160px;
-  padding-left: 26px;
-}
-.skill-arrow {
-  position: absolute;
-  right: 14px;
-  top: 24px;
-  font-size: 1.16em;
-  color: #7d53fa;
-  transition: transform 0.6s;
-}
-.skill-category.open .skill-arrow {
-  transform: rotate(90deg);
-}
+body.dark-mode #achievements ul li { color: #64ffda; }
 
-/* Certifications badges */
-#certifications {
-  text-align: center;
-}
-.cert-badges {
-  margin-top: 25px;
-}
-.cert-badge {
-  display: inline-block;
-  background: #b5a6f8;
-  padding: 10px 28px;
-  margin: 12px 15px;
-  color: #2a154b;
-  border-radius: 40px;
-  font-weight: 600;
-  font-size: 1.07rem;
-  box-shadow: 0 3px 12px #816ae35e;
-  user-select: none;
-  transition:
-    background 0.45s,
-    color 0.45s,
-    box-shadow 0.45s,
-    transform 0.35s;
-  position: relative;
-  animation: badgeAppear 1.25s cubic-bezier(.47,.24,.69,1.27);
-}
-@keyframes badgeAppear {
-  from { opacity: 0; transform: scale(.88);}
-  to { opacity: 1; transform: scale(1);}
-}
-.cert-badge:hover {
-  background: #8853ff;
-  color: #fff;
-  box-shadow: 0 0 20px #a369ffcc;
-  transform: scale(1.09) rotate(-3deg);
-}
-body.dark-mode .cert-badge {
-  background: #6f5fb3;
-  color: #e1ddff;
-  box-shadow: 0 3px 12px #8f79eb9c;
-}
-
-/* Projects - keep as is */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-}
 .project-card {
   background: linear-gradient(115deg,#e1eaff 60%,#f0e1ff 100%);
   border-radius: 18px;
   box-shadow: 0 4px 28px #8571a975;
   overflow: hidden;
-  transition: box-shadow 0.3s, transform 0.3s, background 0.5s;
   padding-bottom: 0;
   position: relative;
+  transition: box-shadow 0.3s, transform 0.3s, background 0.5s;
+  margin-bottom: 24px;
 }
-body.dark-mode .project-card {
-  background: linear-gradient(115deg, #392e4b 60%, #192b3a 100%);
-  color: #ebe7fa;
-}
-.project-card:hover {
-  box-shadow: 0 12px 38px #3730a3ba;
-  transform: translateY(-3px) scale(1.017);
-}
-.project-content {
-  padding: 18px 16px 0 16px;
-}
+body.dark-mode .project-card { background: linear-gradient(115deg, #392e4b 60%, #192b3a 100%); color: #ebe7fa;}
+.project-card:hover { box-shadow: 0 12px 38px #3730a3ba; transform: translateY(-3px) scale(1.017);}
+.project-content { padding: 18px 16px 0 16px;}
 .project-title {
-  margin: 0 0 15px 0;
-  font-size: 1.16em;
-  color: #312563;
   cursor: pointer;
+  font-size: 1.14em;
+  margin: 0 0 15px 0;
+  color: #312563;
   transition: color 0.3s;
   outline: none;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 body.dark-mode .project-title { color: #c084fc;}
-.project-title:hover, .project-title:focus {
-  color: #d277fc;
-  text-decoration: underline;
-}
+.project-title:hover, .project-title:focus { color: #d277fc; text-decoration: underline; background: #f5ecff;}
 .project-details {
   max-height: 0;
   overflow: hidden;
   min-height: 0;
-  transition: max-height 0.6s cubic-bezier(.86,0,.36,1), padding 0.6s;
+  transition: max-height 0.75s cubic-bezier(.86,0,.36,1), padding 0.65s;
   background: #f8f4ff;
   margin: 0 -2px 0 -2px;
   border-radius: 0 0 16px 16px;
@@ -303,13 +183,125 @@ body.dark-mode .project-title { color: #c084fc;}
   color: #322387;
 }
 body.dark-mode .project-details { background: #201447; color: #dbbeff;}
-.project-card.open .project-details {
-  max-height: 350px; padding: 14px 18px 11px 18px;
-}
+.project-card.open .project-details { max-height: 400px; padding: 14px 18px 11px 18px; }
 .project-details p { font-size: 0.97em; margin: 2px 0 8px 0;}
+
+.skill-section {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.skill-category {
+  flex: 1 1 280px;
+  background: linear-gradient(135deg, #f0ecff, #def0f8);
+  padding: 18px 22px;
+  border-radius: 14px;
+  box-shadow: 0 0 18px #a58fff49;
+  cursor: pointer;
+  margin-bottom: 16px;
+  user-select: none;
+  outline: none;
+  transition: background 0.5s;
+}
+body.dark-mode .skill-category { background: linear-gradient(135deg, #392e4b, #201c3f); box-shadow: 0 0 18px #d3bae8;}
+.skill-category h3 { font-weight: 600; color: #5736ef; margin-top: 0; display: flex; justify-content: space-between; align-items: center;}
+body.dark-mode .skill-category h3 { color: #a57cff;}
+.skill-arrow { font-size: 1.3em; color: #7d53fa; transition: transform 0.6s; }
+.skill-category.open .skill-arrow { transform: rotate(90deg); }
+.skill-list {
+  max-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding-left: 19px;
+  list-style-type: disc;
+  transition: max-height 0.6s ease, padding 0.6s ease;
+}
+.skill-category.open { background: #e8e1fd; box-shadow: 0 0 40px #7d69da40; padding-bottom: 10px;}
+body.dark-mode .skill-category.open { background: #4e397d; box-shadow: 0 0 23px #a69bff81;}
+.skill-category.open .skill-list { max-height: 160px; padding-left: 26px;}
+
+#certifications {
+  max-width: 700px;
+  margin: 45px auto 60px auto;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, #f8fafc, #dbeafe);
+  border-radius: 22px;
+  box-shadow: 0 0 40px #a48aff59;
+  color: #3b2c7a;
+  text-align: center;
+  font-weight: 600;
+}
+body.dark-mode #certifications {
+  background: linear-gradient(135deg, #2b1b4b, #1e1548);
+  color: #c1bee6;
+  box-shadow: 0 0 50px #7a5ffbaa;
+}
+.cert-badges { margin-top: 25px; }
+.cert-badge {
+  display: inline-block;
+  background: #b5a6f8;
+  padding: 10px 28px;
+  margin: 12px 16px;
+  color: #2a154b;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 12px #816ae35e;
+  user-select: none;
+  transition: background 0.45s, color 0.45s, box-shadow 0.45s, transform 0.35s;
+  cursor: default;
+  animation: badgeAppear 1.25s cubic-bezier(.47,.24,.69,1.27);
+}
+@keyframes badgeAppear {
+  from { opacity: 0; transform: scale(.88);}
+  to { opacity: 1; transform: scale(1);}
+}
+body.dark-mode .cert-badge {
+  background: #6f5fb3;
+  color: #e1ddff;
+  box-shadow: 0 3px 12px #8f79eb9c;
+}
+.cert-badge:hover {
+  background: #8853ff;
+  color: white;
+  box-shadow: 0 0 20px #a369ffcc;
+  transform: scale(1.08) rotate(-2deg);
+}
+
+#contact {
+  max-width: 600px;
+  margin: 60px auto 40px auto;
+  background: linear-gradient(120deg,#cdd9ff,#dfccff);
+  border-radius: 22px;
+  padding: 22px 26px;
+  box-shadow: 0 0 30px #a091f457;
+  color: #2a1f63;
+}
+body.dark-mode #contact {
+  background: linear-gradient(120deg, #211d3a, #3d2c61);
+  color: #beb9f0;
+}
+#contact h2 {
+  text-align: center;
+  color: #7b68fa;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+#contact p {
+  margin: 6px 0;
+  font-size: 1.05rem;
+}
+#contact a {
+  color: #5c39f7;
+  text-decoration: none;
+  font-weight: 700;
+}
+#contact a:hover {
+  text-decoration: underline;
+}
 @media (max-width: 800px) {
-  .sections-horizontal { flex-direction: column;}
-  section { min-width: 100vw; }
+  .skill-section { flex-direction: column;}
+  main { padding: 8px 2vw;}
 }
 </style>
 </head>
@@ -319,19 +311,24 @@ body.dark-mode .project-details { background: #201447; color: #dbbeff;}
   <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌓</button>
 </header>
 <nav>
-  <a href="#about" data-section="about">About</a>
-  <a href="#education" data-section="education">Education</a>
-  <a href="#internships" data-section="internships">Internships</a>
-  <a href="#projects" data-section="projects">Projects</a>
-  <a href="#skills" data-section="skills">Skills</a>
-  <a href="#certifications" data-section="certifications">Certifications</a>
-  <a href="#contact" data-section="contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#internships">Internships</a>
+  <a href="#achievements">Achievements</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#contact">Contact</a>
 </nav>
 <main>
-<div class="sections-horizontal">
   <section id="about">
     <h2>About Me</h2>
     <p>A motivated fresher seeking a challenging role to apply and enhance my technical skills while contributing to the growth of the organization.</p>
+    <ul>
+      <li>Quick learner and proactive problem solver.</li>
+      <li>Strong teamwork and communication skills.</li>
+      <li>Eager to contribute to innovative projects and learn new technologies.</li>
+    </ul>
   </section>
   <section id="education">
     <h2>Education</h2>
@@ -343,8 +340,17 @@ body.dark-mode .project-details { background: #201447; color: #dbbeff;}
   </section>
   <section id="internships">
     <h2>Internships</h2>
+    <p>
+      Completed a remote internship with ZOHO TECHS developing a full-stack e-commerce platform using Java and Angular.<br>
+      Collaborated with senior developers to implement the product catalog, cart management, secured user login with JWT authentication, and performed code optimization checks.
+    </p>
+  </section>
+  <section id="achievements">
+    <h2>Achievements</h2>
     <ul>
-      <li><strong>ZOHO TECHS</strong> (July 2023) - Java with Angular UI Development (Remote): Developed an e-commerce website using Java and Angular.</li>
+      <li>2nd Runner Up — Capgemini’s Tech4Positive Future Challenge 2024 (Youth Voice Edition)</li>
+      <li>Completed TNSIF Java Fullstack Development training</li>
+      <li>Achieved multiple language certifications from IIT Bombay and GUVI</li>
     </ul>
   </section>
   <section id="projects">
@@ -354,9 +360,8 @@ body.dark-mode .project-details { background: #201447; color: #dbbeff;}
         <div class="project-content">
           <div class="project-title" tabindex="0">E-Commerce Website (2023)</div>
           <div class="project-details">
-            <p><b>Role:</b> Fullstack Developer</p>
-            <p><b>Tech Used:</b> Java, Angular UI</p>
-            <p><b>Description:</b> Developed with Java and Angular UI.</p>
+            <p><b>Description:</b> Users can browse products, add items to a cart, and proceed through checkout for online purchases.</p>
+            <p><b>My Work:</b> Implemented the Java backend and Angular front end, designed REST APIs, and developed secure user authentication.</p>
           </div>
         </div>
       </div>
@@ -364,9 +369,8 @@ body.dark-mode .project-details { background: #201447; color: #dbbeff;}
         <div class="project-content">
           <div class="project-title" tabindex="0">Placement Management System (2024)</div>
           <div class="project-details">
-            <p><b>Role:</b> Developer</p>
-            <p><b>Tech Used:</b> Java, Spring Boot, JDBC, SQL, HTML, CSS, JavaScript, AngularJS, NodeJS</p>
-            <p><b>Description:</b> Built with Java, Spring Boot, JDBC, SQL, HTML, CSS, JavaScript, AngularJS, NodeJS.</p>
+            <p><b>Description:</b> Automates student placement processes including notifications, registration, and analytics.</p>
+            <p><b>My Work:</b> Developed backend services in Java Spring Boot, integrated the front end with AngularJS, and optimized SQL queries.</p>
           </div>
         </div>
       </div>
@@ -374,19 +378,17 @@ body.dark-mode .project-details { background: #201447; color: #dbbeff;}
         <div class="project-content">
           <div class="project-title" tabindex="0">To-Do List App (2024)</div>
           <div class="project-details">
-            <p><b>Role:</b> Developer</p>
-            <p><b>Tech Used:</b> Python, Machine Learning</p>
-            <p><b>Description:</b> Built with Python, Machine learning.</p>
+            <p><b>Description:</b> Allows users to create, edit, delete tasks and prioritizes them using machine learning.</p>
+            <p><b>My Work:</b> Built React frontend and integrated Python ML model for task prioritization and notifications.</p>
           </div>
         </div>
       </div>
       <div class="project-card">
         <div class="project-content">
-          <div class="project-title" tabindex="0">Gait Analysis for long distance runners using image processing (2024 - 2025)</div>
+          <div class="project-title" tabindex="0">Gait Analysis (2024 - 2025)</div>
           <div class="project-details">
-            <p><b>Role:</b> Researcher/Developer</p>
-            <p><b>Tech Used:</b> Python, Machine Learning</p>
-            <p><b>Description:</b> Built with Python, Machine learning.</p>
+            <p><b>Description:</b> Analyzes runner’s gait via video input to provide feedback on running form and injury prevention.</p>
+            <p><b>My Work:</b> Implemented image processing algorithms and real-time analysis using OpenCV and Python ML models.</p>
           </div>
         </div>
       </div>
@@ -394,17 +396,23 @@ body.dark-mode .project-details { background: #201447; color: #dbbeff;}
   </section>
   <section id="skills">
     <h2>Skills</h2>
-    <div id="skills-main">
+    <div class="skill-section">
       <div class="skill-category" tabindex="0" aria-expanded="false" aria-controls="frontend-skill-list">
         <h3>Frontend Skills <span class="skill-arrow">▶</span></h3>
         <ul id="frontend-skill-list" class="skill-list" hidden>
-          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Angular UI</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Angular UI</li>
         </ul>
       </div>
       <div class="skill-category" tabindex="0" aria-expanded="false" aria-controls="backend-skill-list">
         <h3>Backend Skills <span class="skill-arrow">▶</span></h3>
         <ul id="backend-skill-list" class="skill-list" hidden>
-          <li>Java</li><li>Spring Boot</li><li>MySQL</li><li>NodeJS</li>
+          <li>Java</li>
+          <li>Spring Boot</li>
+          <li>MySQL</li>
+          <li>NodeJS</li>
         </ul>
       </div>
     </div>
@@ -421,11 +429,9 @@ body.dark-mode .project-details { background: #201447; color: #dbbeff;}
   <section id="contact">
     <h2>Contact</h2>
     <p class="contact-info">Email: <a href="mailto:saf72606@gmail.com">saf72606@gmail.com</a></p>
-    <p class="contact-info">Phone: +91 7358411706</p>
     <p class="contact-info">GitHub: <a href="https://github.com/safiafarheen" target="_blank">github.com/safiafarheen</a></p>
     <p class="contact-info">LinkedIn: <a href="https://www.linkedin.com/in/safiafarheen" target="_blank">linkedin.com/in/safiafarheen</a></p>
   </section>
-</div>
 </main>
 <script>
 // Theme toggle
@@ -442,13 +448,12 @@ if(localStorage.getItem('theme') === 'dark') {
   document.body.classList.add('dark-mode');
 }
 
-// Scroll reveal animation for all sections as they're slid in
+// Scroll reveal animation for sections
 const sections = document.querySelectorAll('section');
 function revealOnScroll() {
   const triggerHeight = window.innerHeight * 0.87;
   sections.forEach(section => {
-    if (section.getBoundingClientRect().top < triggerHeight ||
-        section.getBoundingClientRect().left < window.innerWidth * 0.95) {
+    if (section.getBoundingClientRect().top < triggerHeight) {
       section.classList.add('visible');
     }
   });
@@ -456,7 +461,37 @@ function revealOnScroll() {
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
-// Modern accordion for skills
+// Header nav smooth scroll and highlight
+const navLinks = document.querySelectorAll('nav a');
+navLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+    const hash = link.getAttribute('href');
+    const target = document.querySelector(hash);
+    if(target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+});
+window.addEventListener('scroll', function() {
+  let scrollPos = window.scrollY || window.pageYOffset;
+  navLinks.forEach(link => {
+    const hash = link.getAttribute('href');
+    const section = document.querySelector(hash);
+    if(section) {
+      const top = section.offsetTop - 120;
+      const bottom = top + section.offsetHeight;
+      if(scrollPos >= top && scrollPos < bottom) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    }
+  });
+});
+
+// Toggle skill categories
 const skillCategories = document.querySelectorAll('.skill-category');
 skillCategories.forEach(cat => {
   cat.addEventListener('click', () => {
@@ -480,7 +515,7 @@ skillCategories.forEach(cat => {
   });
 });
 
-// Project card accordion
+// Project card details accordion animation
 const projectTitles = document.querySelectorAll('.project-title');
 projectTitles.forEach(title => {
   title.addEventListener('click', () => {
@@ -493,29 +528,6 @@ projectTitles.forEach(title => {
       title.click();
     }
   });
-});
-
-// Horizontal slide navigation with snap animation
-const navLinks = document.querySelectorAll('nav a');
-const horizontalContainer = document.querySelector('.sections-horizontal');
-const sectionOrder = Array.from(document.querySelectorAll('section')).map(s => s.id);
-
-navLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const sectionId = link.getAttribute('data-section');
-    const index = sectionOrder.indexOf(sectionId);
-    if (index !== -1) {
-      horizontalContainer.style.transform = `translateX(-${100*index}vw)`;
-      setTimeout(() => { revealOnScroll(); }, 100); // ensure animation on slide
-    }
-  });
-});
-
-// Show the first section on load
-window.addEventListener('load', () => {
-  horizontalContainer.style.transform = 'translateX(0vw)';
-  revealOnScroll();
 });
 </script>
 </body>
