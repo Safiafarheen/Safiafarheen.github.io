@@ -3,1186 +3,235 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Safia Farheen Z R | Portfolio</title>
+<title>Safia Farheen Z R | Professional Portfolio</title>
 <style>
-:root {
-  --gradient-light: linear-gradient(135deg, #f8fafc, #dbeafe);
-  --gradient-dark: linear-gradient(135deg, #0f172a, #1e293b);
-  --card-light: #ffffff;
-  --card-dark: #1e293b;
-  --text-light: #0f172a;
-  --text-dark: #e2e8f0;
-  --accent-light: #2563eb;
-  --accent-dark: #38bdf8;
-  --radius: 12px;
-  --shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: var(--gradient-light);
-  color: var(--text-light);
-  transition: background 0.5s, color 0.5s;
-}
-
-body.dark-mode {
-  background: var(--gradient-dark);
-  color: var(--text-dark);
-}
-
-h1, h2 {
-  margin: 0 0 10px;
-}
-
-section {
-  background: var(--card-light);
-  padding: 20px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s cubic-bezier(.42,0,.58,1), transform 0.8s;
-}
-body.dark-mode section {
-  background: var(--card-dark);
-}
-
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  z-index: 1000;
-}
-body.dark-mode nav {
-  background: rgba(15,23,42,0.8);
-}
-
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-nav a.active, nav a:hover {
-  color: var(--accent-light);
-}
-body.dark-mode nav a.active, body.dark-mode nav a:hover {
-  color: var(--accent-dark);
-}
-
-.theme-toggle {
-  position: absolute;
-  right: 20px;
-  cursor: pointer;
-  background: var(--accent-light);
-  color: white;
-  padding: 5px 10px;
-  border-radius: var(--radius);
-  font-size: 1.2em;
-  transition: background 0.3s;
-}
-body.dark-mode .theme-toggle {
-  background: var(--accent-dark);
-}
-
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid var(--accent-light);
-  box-shadow: 0 0 20px var(--accent-light);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-body.dark-mode .profile-pic {
-  border: 4px solid var(--accent-dark);
-  box-shadow: 0 0 20px var(--accent-dark);
-}
-.profile-pic:hover {
-  transform: scale(1.05);
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-.project-card {
-  background: var(--card-light);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s;
-  display: flex;
-  flex-direction: column;
-}
-body.dark-mode .project-card {
-  background: var(--card-dark);
-}
-.project-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(37,99,235,0.15);
-}
-.project-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  filter: grayscale(10%) contrast(1.1);
-  transition: filter 0.3s;
-}
-.project-card:hover img {
-  filter: none;
-}
-.project-card .content {
-  padding: 15px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.project-meta {
-  margin-top: 10px;
-  font-size: 0.95em;
-  color: #5282ca;
-}
-body.dark-mode .project-meta {
-  color: #38bdf8;
-}
-
-@media (max-width: 700px) {
-  .projects {
-    grid-template-columns: 1fr;
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #a3cef1, #5a8fdf);
+    color: #333;
+    transition: all 0.4s ease;
   }
-  nav { font-size: 0.9em; }
-}
+  header {
+    background-image: url('https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/20aa7e61-3d91-42a9-8b39-2eebe2074439.png');
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 1px 1px 4px #000000cc;
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+  nav {
+    background: #3b5998;
+    padding: 10px 0;
+    text-align: center;
+  }
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #f1c40f;
+  }
+  section {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #8888;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  h2 {
+    border-bottom: 2px solid #5a8fdf;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    margin: 8px 0;
+  }
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .project-card {
+    background: #e9f0ff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(90,143,223,0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(90,143,223,0.6);
+  }
+  .project-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+  .project-content {
+    padding: 15px;
+  }
+  .project-title {
+    margin: 0 0 10px 0;
+  }
+  .project-meta {
+    font-size: 0.9rem;
+    color: #3b5998;
+    margin-top: 10px;
+  }
+  .skills-list, .certifications-list, .languages-list, .soft-skills-list {
+    column-count: 2;
+    list-style: inside disc;
+  }
+  .contact-info a {
+    color: #3b5998;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>
+<header>
+  Safia Farheen Z R
+</header>
 <nav>
-  <a href="#about" class="active">About</a>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#internships">Internships</a>
+  <a href="#projects">Projects</a>
   <a href="#skills">Skills</a>
   <a href="#certifications">Certifications</a>
-  <a href="#achievements">Achievements</a>
-  <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
-  <div class="theme-toggle" id="themeToggle">🌓</div>
 </nav>
-<main style="padding:80px 20px; max-width:1000px; margin:auto;">
-<!-- Profile -->
-<section id="about">
-  <div style="text-align:center;">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAYACAIAAABn4K39AADPUmNhQlgAAM9SanVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAANw9qdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOmQ0ZTU3MzhjLTAzNDctNDc0ZS04Njg0LTNmZjNlZjE2MDkwYwAAAAHhanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAABBWp1bWIAAAApanVtZGNib3IAEQAQgAAAqgA4m3EDYzJwYS5hY3Rpb25zLnYyAAAAANRjYm9yoWdhY3Rpb25zgqNmYWN0aW9ubGMycGEuY3JlYXRlZG1zb2Z0d2FyZUFnZW50v2RuYW1lZkdQVC00b/9xZGlnaXRhbFNvdXJjZVR5cGV4Rmh0dHA6Ly9jdi5pcHRjLm9yZy9uZXdzY29kZXMvZGln"
-    alt="Profile" class="profile-pic">
-    <h1>Safia Farheen Z R</h1>
-    <p>Java Full Stack Developer</p>
-    <p>📍 Chengalpattu | 📧 <a href="mailto:saf72606@gmail.com">saf72606@gmail.com</a> | ☎ 7358411706</p>
-    <p>
-      <a href="https://github.com/Safiafarheen" target="_blank">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/safiafarheen" target="_blank">LinkedIn</a>
-    </p>
-  </div>
-</section>
-<!-- Skills -->
-<section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>React, HTML, CSS, JavaScript</li>
-    <li>Java, Spring Boot, MySQL, JUnit</li>
-  </ul>
-</section>
-<!-- Certifications -->
-<section id="certifications">
-  <h2>Certifications</h2>
-  <ul>
-    <li>C Spoken Tutorial Project IIT Bombay</li>
-    <li>C++ Spoken Tutorial Project IIT Bombay</li>
-    <li>Java Spoken Tutorial Project IIT Bombay</li>
-    <li>Python GUVI and IITM</li>
-  </ul>
-</section>
-<!-- Achievements -->
-<section id="achievements">
-  <h2>Achievements</h2>
-  <ul>
-    <li>2nd Runner Up — Capgemini’s Tech4Positive Future Challenge 2024 (Youth Voice Edition)</li>
-  </ul>
-</section>
-<!-- Projects -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="E-commerce">
-      <div class="content">
-        <h3>E-Commerce Website</h3>
-        <p>Full-stack platform including product listings, shopping cart, and complete order flow.</p>
-        <div class="project-meta">Tech: React, Spring Boot, MySQL <br> Role: Frontend & Backend Development</div>
+<main>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>A motivated fresher seeking a challenging role to apply and enhance my technical skills while contributing to the growth of the organization.</p>
+  </section>
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>B.E. in Electronics and Communication Engineering</strong>, Mohammed Sathak AJ College of Engineering, Chennai (2021 - 2025), CGPA: 7.8</li>
+      <li><strong>12th Grade (State Board)</strong>, Little Jacky Matriculation Higher Secondary School, Chengalpattu (2021), 86%</li>
+      <li><strong>10th Grade (State Board)</strong>, St. Mary’s Girls Higher Secondary School, Chengalpattu (2019), 79%</li>
+    </ul>
+  </section>
+  <section id="internships">
+    <h2>Internships</h2>
+    <ul>
+      <li><strong>ZOHO TECHS</strong> (July 2023) - Java with Angular UI Development (Remote): Developed an e-commerce website using Java and Angular.</li>
+    </ul>
+  </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/9301f70e-a776-4484-8140-78e4f49a441c.png" alt="E-Commerce Website" class="project-img">
+        <div class="project-content">
+          <h3 class="project-title">E-Commerce Website (2023)</h3>
+          <p>Developed with Java and Angular UI.</p>
+          <p class="project-meta"><strong>Tech:</strong> Java, Angular<br><strong>Role:</strong> Fullstack Developer</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/cfc94630-47de-40ca-9100-0f69a04d83eb.png" alt="Placement Management System" class="project-img">
+        <div class="project-content">
+          <h3 class="project-title">Placement Management System (2024)</h3>
+          <p>Built with Java, Spring Boot, JDBC, SQL, HTML, CSS, JavaScript, AngularJS, NodeJS.</p>
+          <p class="project-meta"><strong>Tech:</strong> Java, Spring Boot, JDBC, SQL, HTML, CSS, JavaScript, AngularJS, NodeJS<br><strong>Role:</strong> Developer</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/34e0d6e9-8627-4175-bb21-b3454bac79da.png" alt="To-Do List App" class="project-img">
+        <div class="project-content">
+          <h3 class="project-title">To-Do List App (2024)</h3>
+          <p>Built with Python, Machine learning.</p>
+          <p class="project-meta"><strong>Tech:</strong> Python, Machine Learning<br><strong>Role:</strong> Developer</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/cfc94630-47de-40ca-9100-0f69a04d83eb.png" alt="Gait Analysis" class="project-img">
+        <div class="project-content">
+          <h3 class="project-title">Gait Analysis for long distance runners using image processing (2024 - 2025)</h3>
+          <p>Built with Python, Machine learning.</p>
+          <p class="project-meta"><strong>Tech:</strong> Python, Machine Learning<br><strong>Role:</strong> Researcher/Developer</p>
+        </div>
       </div>
     </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=400&q=80" alt="Placement System">
-      <div class="content">
-        <h3>Placement Management System</h3>
-        <p>System to manage student placements, placement drives, and registration workflows.</p>
-        <div class="project-meta">Tech: Java, Spring Boot, MySQL <br> Role: Backend Development</div>
-      </div>
-    </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=400&q=80" alt="To-do App">
-      <div class="content">
-        <h3>To-Do List App</h3>
-        <p>Task management with add/edit/delete functionalities and ML-based prioritization.</p>
-        <div class="project-meta">Tech: React, JavaScript, ML Models <br> Role: Frontend Development & ML Integration</div>
-      </div>
-    </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Gait Analysis">
-      <div class="content">
-        <h3>Gait Analysis</h3>
-        <p>Real-time video-based gait analysis focused on runners for performance improvement.</p>
-        <div class="project-meta">Tech: Python, OpenCV, Machine Learning <br> Role: Computer Vision & Data Analysis</div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>📧 saf72606@gmail.com</p>
-  <p>☎ 7358411706</p>
-</section>
+  </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <h3>Technical Skills</h3>
+    <ul class="skills-list">
+      <li>Java</li><li>C</li><li>C++</li><li>Python</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>MySQL</li><li>Ms Office</li>
+    </ul>
+    <h3>Soft Skills</h3>
+    <ul class="soft-skills-list">
+      <li>Problem-solving</li><li>Team collaboration</li><li>Communication</li><li>Adaptability</li><li>Analytical Ability</li><li>Listening skill</li>
+    </ul>
+    <h3>Languages Known</h3>
+    <ul class="languages-list">
+      <li>Tamil (Native)</li><li>English (Fluent)</li><li>Hindi (Basic)</li><li>Urdu (Fluent)</li>
+    </ul>
+  </section>
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul class="certifications-list">
+      <li>Java Fullstack Development, TNS India Foundation, Capgemini</li>
+      <li>C, Spoken Tutorial Project IIT Bombay</li>
+      <li>Java, Spoken Tutorial Project IIT Bombay</li>
+      <li>Python, GUVI and IITM</li>
+    </ul>
+  </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="contact-info">Email: <a href="mailto:saf72606@gmail.com">saf72606@gmail.com</a></p>
+    <p class="contact-info">Phone: +91 7358411706</p>
+    <p class="contact-info">GitHub: <a href="https://github.com/safiafarheen" target="_blank">github.com/safiafarheen</a></p>
+    <p class="contact-info">LinkedIn: <a href="https://www.linkedin.com/in/safiafarheen" target="_blank">linkedin.com/in/safiafarheen</a></p>
+  </section>
 </main>
 <script>
-// = Theme Toggle =
-const themeToggle = document.getElementById('themeToggle');
-const body = document.body;
-function applyTheme(theme) {
-  if (theme === 'dark') {
-    body.classList.add('dark-mode');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    body.classList.remove('dark-mode');
-    localStorage.setItem('theme', 'light');
-  }
-}
-const savedTheme = localStorage.getItem('theme') || 'light';
-applyTheme(savedTheme);
-themeToggle.addEventListener('click', () => {
-  const isDark = body.classList.contains('dark-mode');
-  applyTheme(isDark ? 'light' : 'dark');
-});
-
-// = Reveal Animation =
+// Scroll reveal animation for sections
 const sections = document.querySelectorAll('section');
-const revealOnScroll = () => {
-  const trigger = window.innerHeight * 0.85;
-  sections.forEach(sec => {
-    if(sec.getBoundingClientRect().top < trigger) {
-      sec.style.opacity = 1;
-      sec.style.transform = 'translateY(0)';
+function revealOnScroll() {
+  const triggerHeight = window.innerHeight * 0.9;
+  sections.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if (top < triggerHeight) {
+      section.classList.add('visible');
     }
   });
-};
+}
 window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
-</script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Safia Farheen Z R | Portfolio</title>
-<style>
-:root {
-  --gradient-light: linear-gradient(135deg, #f8fafc, #dbeafe);
-  --gradient-dark: linear-gradient(135deg, #0f172a, #1e293b);
-  --card-light: #ffffff;
-  --card-dark: #1e293b;
-  --text-light: #0f172a;
-  --text-dark: #e2e8f0;
-  --accent-light: #2563eb;
-  --accent-dark: #38bdf8;
-  --radius: 12px;
-  --shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: var(--gradient-light);
-  color: var(--text-light);
-  transition: background 0.5s, color 0.5s;
-}
-
-body.dark-mode {
-  background: var(--gradient-dark);
-  color: var(--text-dark);
-}
-
-h1, h2 {
-  margin: 0 0 10px;
-}
-
-section {
-  background: var(--card-light);
-  padding: 20px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s cubic-bezier(.42,0,.58,1), transform 0.8s;
-}
-body.dark-mode section {
-  background: var(--card-dark);
-}
-
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  z-index: 1000;
-}
-body.dark-mode nav {
-  background: rgba(15,23,42,0.8);
-}
-
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-nav a.active, nav a:hover {
-  color: var(--accent-light);
-}
-body.dark-mode nav a.active, body.dark-mode nav a:hover {
-  color: var(--accent-dark);
-}
-
-.theme-toggle {
-  position: absolute;
-  right: 20px;
-  cursor: pointer;
-  background: var(--accent-light);
-  color: white;
-  padding: 5px 10px;
-  border-radius: var(--radius);
-  font-size: 1.2em;
-  transition: background 0.3s;
-}
-body.dark-mode .theme-toggle {
-  background: var(--accent-dark);
-}
-
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid var(--accent-light);
-  box-shadow: 0 0 20px var(--accent-light);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-body.dark-mode .profile-pic {
-  border: 4px solid var(--accent-dark);
-  box-shadow: 0 0 20px var(--accent-dark);
-}
-.profile-pic:hover {
-  transform: scale(1.05);
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-.project-card {
-  background: var(--card-light);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s;
-  display: flex;
-  flex-direction: column;
-}
-body.dark-mode .project-card {
-  background: var(--card-dark);
-}
-.project-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(37,99,235,0.15);
-}
-.project-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  filter: grayscale(10%) contrast(1.1);
-  transition: filter 0.3s;
-}
-.project-card:hover img {
-  filter: none;
-}
-.project-card .content {
-  padding: 15px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.project-meta {
-  margin-top: 10px;
-  font-size: 0.95em;
-  color: #5282ca;
-}
-body.dark-mode .project-meta {
-  color: #38bdf8;
-}
-
-@media (max-width: 700px) {
-  .projects {
-    grid-template-columns: 1fr;
-  }
-  nav { font-size: 0.9em; }
-}
-</style>
-</head>
-<body>
-<nav>
-  <a href="#about" class="active">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#certifications">Certifications</a>
-  <a href="#achievements">Achievements</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-  <div class="theme-toggle" id="themeToggle">🌓</div>
-</nav>
-<main style="padding:80px 20px; max-width:1000px; margin:auto;">
-<!-- Profile -->
-<section id="about">
-  <div style="text-align:center;">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAYACAIAAABn4K39AADPUmNhQlgAAM9SanVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAANw9qdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOmQ0ZTU3MzhjLTAzNDctNDc0ZS04Njg0LTNmZjNlZjE2MDkwYwAAAAHhanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAABBWp1bWIAAAApanVtZGNib3IAEQAQgAAAqgA4m3EDYzJwYS5hY3Rpb25zLnYyAAAAANRjYm9yoWdhY3Rpb25zgqNmYWN0aW9ubGMycGEuY3JlYXRlZG1zb2Z0d2FyZUFnZW50v2RuYW1lZkdQVC00b/9xZGlnaXRhbFNvdXJjZVR5cGV4Rmh0dHA6Ly9jdi5pcHRjLm9yZy9uZXdzY29kZXMvZGln"
-    alt="Profile" class="profile-pic">
-    <h1>Safia Farheen Z R</h1>
-    <p>Java Full Stack Developer</p>
-    <p>📍 Chengalpattu | 📧 <a href="mailto:saf72606@gmail.com">saf72606@gmail.com</a> | ☎ 7358411706</p>
-    <p>
-      <a href="https://github.com/Safiafarheen" target="_blank">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/safiafarheen" target="_blank">LinkedIn</a>
-    </p>
-  </div>
-</section>
-<!-- Skills -->
-<section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>React, HTML, CSS, JavaScript</li>
-    <li>Java, Spring Boot, MySQL, JUnit</li>
-  </ul>
-</section>
-<!-- Certifications -->
-<section id="certifications">
-  <h2>Certifications</h2>
-  <ul>
-    <li>C Spoken Tutorial Project IIT Bombay</li>
-    <li>C++ Spoken Tutorial Project IIT Bombay</li>
-    <li>Java Spoken Tutorial Project IIT Bombay</li>
-    <li>Python GUVI and IITM</li>
-  </ul>
-</section>
-<!-- Achievements -->
-<section id="achievements">
-  <h2>Achievements</h2>
-  <ul>
-    <li>2nd Runner Up — Capgemini’s Tech4Positive Future Challenge 2024 (Youth Voice Edition)</li>
-  </ul>
-</section>
-<!-- Projects -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="E-commerce">
-      <div class="content">
-        <h3>E-Commerce Website</h3>
-        <p>Full-stack platform including product listings, shopping cart, and complete order flow.</p>
-        <div class="project-meta">Tech: React, Spring Boot, MySQL <br> Role: Frontend & Backend Development</div>
-      </div>
-    </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=400&q=80" alt="Placement System">
-      <div class="content">
-        <h3>Placement Management System</h3>
-        <p>System to manage student placements, placement drives, and registration workflows.</p>
-        <div class="project-meta">Tech: Java, Spring Boot, MySQL <br> Role: Backend Development</div>
-      </div>
-    </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=400&q=80" alt="To-do App">
-      <div class="content">
-        <h3>To-Do List App</h3>
-        <p>Task management with add/edit/delete functionalities and ML-based prioritization.</p>
-        <div class="project-meta">Tech: React, JavaScript, ML Models <br> Role: Frontend Development & ML Integration</div>
-      </div>
-    </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Gait Analysis">
-      <div class="content">
-        <h3>Gait Analysis</h3>
-        <p>Real-time video-based gait analysis focused on runners for performance improvement.</p>
-        <div class="project-meta">Tech: Python, OpenCV, Machine Learning <br> Role: Computer Vision & Data Analysis</div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>📧 saf72606@gmail.com</p>
-  <p>☎ 7358411706</p>
-</section>
-</main>
-<script>
-// = Theme Toggle =
-const themeToggle = document.getElementById('themeToggle');
-const body = document.body;
-function applyTheme(theme) {
-  if (theme === 'dark') {
-    body.classList.add('dark-mode');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    body.classList.remove('dark-mode');
-    localStorage.setItem('theme', 'light');
-  }
-}
-const savedTheme = localStorage.getItem('theme') || 'light';
-applyTheme(savedTheme);
-themeToggle.addEventListener('click', () => {
-  const isDark = body.classList.contains('dark-mode');
-  applyTheme(isDark ? 'light' : 'dark');
-});
-
-// = Reveal Animation =
-const sections = document.querySelectorAll('section');
-const revealOnScroll = () => {
-  const trigger = window.innerHeight * 0.85;
-  sections.forEach(sec => {
-    if(sec.getBoundingClientRect().top < trigger) {
-      sec.style.opacity = 1;
-      sec.style.transform = 'translateY(0)';
-    }
-  });
-};
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
-</script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Safia Farheen Z R | Portfolio</title>
-<style>
-:root {
-  --gradient-light: linear-gradient(135deg, #f8fafc, #dbeafe);
-  --gradient-dark: linear-gradient(135deg, #0f172a, #1e293b);
-  --card-light: #ffffff;
-  --card-dark: #1e293b;
-  --text-light: #0f172a;
-  --text-dark: #e2e8f0;
-  --accent-light: #2563eb;
-  --accent-dark: #38bdf8;
-  --radius: 12px;
-  --shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: var(--gradient-light);
-  color: var(--text-light);
-  transition: background 0.5s, color 0.5s;
-}
-
-body.dark-mode {
-  background: var(--gradient-dark);
-  color: var(--text-dark);
-}
-
-h1, h2 {
-  margin: 0 0 10px;
-}
-
-section {
-  background: var(--card-light);
-  padding: 20px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s cubic-bezier(.42,0,.58,1), transform 0.8s;
-}
-body.dark-mode section {
-  background: var(--card-dark);
-}
-
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  z-index: 1000;
-}
-body.dark-mode nav {
-  background: rgba(15,23,42,0.8);
-}
-
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-nav a.active, nav a:hover {
-  color: var(--accent-light);
-}
-body.dark-mode nav a.active, body.dark-mode nav a:hover {
-  color: var(--accent-dark);
-}
-
-.theme-toggle {
-  position: absolute;
-  right: 20px;
-  cursor: pointer;
-  background: var(--accent-light);
-  color: white;
-  padding: 5px 10px;
-  border-radius: var(--radius);
-  font-size: 1.2em;
-  transition: background 0.3s;
-}
-body.dark-mode .theme-toggle {
-  background: var(--accent-dark);
-}
-
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid var(--accent-light);
-  box-shadow: 0 0 20px var(--accent-light);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-body.dark-mode .profile-pic {
-  border: 4px solid var(--accent-dark);
-  box-shadow: 0 0 20px var(--accent-dark);
-}
-.profile-pic:hover {
-  transform: scale(1.05);
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-.project-card {
-  background: var(--card-light);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s;
-  display: flex;
-  flex-direction: column;
-}
-body.dark-mode .project-card {
-  background: var(--card-dark);
-}
-.project-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(37,99,235,0.15);
-}
-.project-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  filter: grayscale(10%) contrast(1.1);
-  transition: filter 0.3s;
-}
-.project-card:hover img {
-  filter: none;
-}
-.project-card .content {
-  padding: 15px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.project-meta {
-  margin-top: 10px;
-  font-size: 0.95em;
-  color: #5282ca;
-}
-body.dark-mode .project-meta {
-  color: #38bdf8;
-}
-
-@media (max-width: 700px) {
-  .projects {
-    grid-template-columns: 1fr;
-  }
-  nav { font-size: 0.9em; }
-}
-</style>
-</head>
-<body>
-<nav>
-  <a href="#about" class="active">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#certifications">Certifications</a>
-  <a href="#achievements">Achievements</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-  <div class="theme-toggle" id="themeToggle">🌓</div>
-</nav>
-<main style="padding:80px 20px; max-width:1000px; margin:auto;">
-<!-- Profile -->
-<section id="about">
-  <div style="text-align:center;">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAYACAIAAABn4K39AADPUmNhQlgAAM9SanVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAANw9qdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOmQ0ZTU3MzhjLTAzNDctNDc0ZS04Njg0LTNmZjNlZjE2MDkwYwAAAAHhanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAABBWp1bWIAAAApanVtZGNib3IAEQAQgAAAqgA4m3EDYzJwYS5hY3Rpb25zLnYyAAAAANRjYm9yoWdhY3Rpb25zgqNmYWN0aW9ubGMycGEuY3JlYXRlZG1zb2Z0d2FyZUFnZW50v2RuYW1lZkdQVC00b/9xZGlnaXRhbFNvdXJjZVR5cGV4Rmh0dHA6Ly9jdi5pcHRjLm9yZy9uZXdzY29kZXMvZGln"
-    alt="Profile" class="profile-pic">
-    <h1>Safia Farheen Z R</h1>
-    <p>Java Full Stack Developer</p>
-    <p>📍 Chengalpattu | 📧 <a href="mailto:saf72606@gmail.com">saf72606@gmail.com</a> | ☎ 7358411706</p>
-    <p>
-      <a href="https://github.com/Safiafarheen" target="_blank">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/safiafarheen" target="_blank">LinkedIn</a>
-    </p>
-  </div>
-</section>
-<!-- Skills -->
-<section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>React, HTML, CSS, JavaScript</li>
-    <li>Java, Spring Boot, MySQL, JUnit</li>
-  </ul>
-</section>
-<!-- Certifications -->
-<section id="certifications">
-  <h2>Certifications</h2>
-  <ul>
-    <li>C Spoken Tutorial Project IIT Bombay</li>
-    <li>C++ Spoken Tutorial Project IIT Bombay</li>
-    <li>Java Spoken Tutorial Project IIT Bombay</li>
-    <li>Python GUVI and IITM</li>
-  </ul>
-</section>
-<!-- Achievements -->
-<section id="achievements">
-  <h2>Achievements</h2>
-  <ul>
-    <li>2nd Runner Up — Capgemini’s Tech4Positive Future Challenge 2024 (Youth Voice Edition)</li>
-  </ul>
-</section>
-<!-- Projects -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="E-commerce">
-      <div class="content">
-        <h3>E-Commerce Website</h3>
-        <p>Full-stack platform including product listings, shopping cart, and complete order flow.</p>
-        <div class="project-meta">Tech: React, Spring Boot, MySQL <br> Role: Frontend & Backend Development</div>
-      </div>
-    </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=400&q=80" alt="Placement System">
-      <div class="content">
-        <h3>Placement Management System</h3>
-        <p>System to manage student placements, placement drives, and registration workflows.</p>
-        <div class="project-meta">Tech: Java, Spring Boot, MySQL <br> Role: Backend Development</div>
-      </div>
-    </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=400&q=80" alt="To-do App">
-      <div class="content">
-        <h3>To-Do List App</h3>
-        <p>Task management with add/edit/delete functionalities and ML-based prioritization.</p>
-        <div class="project-meta">Tech: React, JavaScript, ML Models <br> Role: Frontend Development & ML Integration</div>
-      </div>
-    </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Gait Analysis">
-      <div class="content">
-        <h3>Gait Analysis</h3>
-        <p>Real-time video-based gait analysis focused on runners for performance improvement.</p>
-        <div class="project-meta">Tech: Python, OpenCV, Machine Learning <br> Role: Computer Vision & Data Analysis</div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>📧 saf72606@gmail.com</p>
-  <p>☎ 7358411706</p>
-</section>
-</main>
-<script>
-// = Theme Toggle =
-const themeToggle = document.getElementById('themeToggle');
-const body = document.body;
-function applyTheme(theme) {
-  if (theme === 'dark') {
-    body.classList.add('dark-mode');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    body.classList.remove('dark-mode');
-    localStorage.setItem('theme', 'light');
-  }
-}
-const savedTheme = localStorage.getItem('theme') || 'light';
-applyTheme(savedTheme);
-themeToggle.addEventListener('click', () => {
-  const isDark = body.classList.contains('dark-mode');
-  applyTheme(isDark ? 'light' : 'dark');
-});
-
-// = Reveal Animation =
-const sections = document.querySelectorAll('section');
-const revealOnScroll = () => {
-  const trigger = window.innerHeight * 0.85;
-  sections.forEach(sec => {
-    if(sec.getBoundingClientRect().top < trigger) {
-      sec.style.opacity = 1;
-      sec.style.transform = 'translateY(0)';
-    }
-  });
-};
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
-</script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Safia Farheen Z R | Portfolio</title>
-<style>
-:root {
-  --gradient-light: linear-gradient(135deg, #f8fafc, #dbeafe);
-  --gradient-dark: linear-gradient(135deg, #0f172a, #1e293b);
-  --card-light: #ffffff;
-  --card-dark: #1e293b;
-  --text-light: #0f172a;
-  --text-dark: #e2e8f0;
-  --accent-light: #2563eb;
-  --accent-dark: #38bdf8;
-  --radius: 12px;
-  --shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: var(--gradient-light);
-  color: var(--text-light);
-  transition: background 0.5s, color 0.5s;
-}
-
-body.dark-mode {
-  background: var(--gradient-dark);
-  color: var(--text-dark);
-}
-
-h1, h2 {
-  margin: 0 0 10px;
-}
-
-section {
-  background: var(--card-light);
-  padding: 20px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s cubic-bezier(.42,0,.58,1), transform 0.8s;
-}
-body.dark-mode section {
-  background: var(--card-dark);
-}
-
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  z-index: 1000;
-}
-body.dark-mode nav {
-  background: rgba(15,23,42,0.8);
-}
-
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-nav a.active, nav a:hover {
-  color: var(--accent-light);
-}
-body.dark-mode nav a.active, body.dark-mode nav a:hover {
-  color: var(--accent-dark);
-}
-
-.theme-toggle {
-  position: absolute;
-  right: 20px;
-  cursor: pointer;
-  background: var(--accent-light);
-  color: white;
-  padding: 5px 10px;
-  border-radius: var(--radius);
-  font-size: 1.2em;
-  transition: background 0.3s;
-}
-body.dark-mode .theme-toggle {
-  background: var(--accent-dark);
-}
-
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid var(--accent-light);
-  box-shadow: 0 0 20px var(--accent-light);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-body.dark-mode .profile-pic {
-  border: 4px solid var(--accent-dark);
-  box-shadow: 0 0 20px var(--accent-dark);
-}
-.profile-pic:hover {
-  transform: scale(1.05);
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-.project-card {
-  background: var(--card-light);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s;
-  display: flex;
-  flex-direction: column;
-}
-body.dark-mode .project-card {
-  background: var(--card-dark);
-}
-.project-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(37,99,235,0.15);
-}
-.project-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  filter: grayscale(10%) contrast(1.1);
-  transition: filter 0.3s;
-}
-.project-card:hover img {
-  filter: none;
-}
-.project-card .content {
-  padding: 15px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.project-meta {
-  margin-top: 10px;
-  font-size: 0.95em;
-  color: #5282ca;
-}
-body.dark-mode .project-meta {
-  color: #38bdf8;
-}
-
-@media (max-width: 700px) {
-  .projects {
-    grid-template-columns: 1fr;
-  }
-  nav { font-size: 0.9em; }
-}
-</style>
-</head>
-<body>
-<nav>
-  <a href="#about" class="active">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#certifications">Certifications</a>
-  <a href="#achievements">Achievements</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-  <div class="theme-toggle" id="themeToggle">🌓</div>
-</nav>
-<main style="padding:80px 20px; max-width:1000px; margin:auto;">
-<!-- Profile -->
-<section id="about">
-  <div style="text-align:center;">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAYACAIAAABn4K39AADPUmNhQlgAAM9SanVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAANw9qdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOmQ0ZTU3MzhjLTAzNDctNDc0ZS04Njg0LTNmZjNlZjE2MDkwYwAAAAHhanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAABBWp1bWIAAAApanVtZGNib3IAEQAQgAAAqgA4m3EDYzJwYS5hY3Rpb25zLnYyAAAAANRjYm9yoWdhY3Rpb25zgqNmYWN0aW9ubGMycGEuY3JlYXRlZG1zb2Z0d2FyZUFnZW50v2RuYW1lZkdQVC00b/9xZGlnaXRhbFNvdXJjZVR5cGV4Rmh0dHA6Ly9jdi5pcHRjLm9yZy9uZXdzY29kZXMvZGln"
-    alt="Profile" class="profile-pic">
-    <h1>Safia Farheen Z R</h1>
-    <p>Java Full Stack Developer</p>
-    <p>📍 Chengalpattu | 📧 <a href="mailto:saf72606@gmail.com">saf72606@gmail.com</a> | ☎ 7358411706</p>
-    <p>
-      <a href="https://github.com/Safiafarheen" target="_blank">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/safiafarheen" target="_blank">LinkedIn</a>
-    </p>
-  </div>
-</section>
-<!-- Skills -->
-<section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>React, HTML, CSS, JavaScript</li>
-    <li>Java, Spring Boot, MySQL, JUnit</li>
-  </ul>
-</section>
-<!-- Certifications -->
-<section id="certifications">
-  <h2>Certifications</h2>
-  <ul>
-    <li>C Spoken Tutorial Project IIT Bombay</li>
-    <li>C++ Spoken Tutorial Project IIT Bombay</li>
-    <li>Java Spoken Tutorial Project IIT Bombay</li>
-    <li>Python GUVI and IITM</li>
-  </ul>
-</section>
-<!-- Achievements -->
-<section id="achievements">
-  <h2>Achievements</h2>
-  <ul>
-    <li>2nd Runner Up — Capgemini’s Tech4Positive Future Challenge 2024 (Youth Voice Edition)</li>
-  </ul>
-</section>
-<!-- Projects -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="E-commerce">
-      <div class="content">
-        <h3>E-Commerce Website</h3>
-        <p>Full-stack platform including product listings, shopping cart, and complete order flow.</p>
-        <div class="project-meta">Tech: React, Spring Boot, MySQL <br> Role: Frontend & Backend Development</div>
-      </div>
-    </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=400&q=80" alt="Placement System">
-      <div class="content">
-        <h3>Placement Management System</h3>
-        <p>System to manage student placements, placement drives, and registration workflows.</p>
-        <div class="project-meta">Tech: Java, Spring Boot, MySQL <br> Role: Backend Development</div>
-      </div>
-    </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=400&q=80" alt="To-do App">
-      <div class="content">
-        <h3>To-Do List App</h3>
-        <p>Task management with add/edit/delete functionalities and ML-based prioritization.</p>
-        <div class="project-meta">Tech: React, JavaScript, ML Models <br> Role: Frontend Development & ML Integration</div>
-      </div>
-    </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Gait Analysis">
-      <div class="content">
-        <h3>Gait Analysis</h3>
-        <p>Real-time video-based gait analysis focused on runners for performance improvement.</p>
-        <div class="project-meta">Tech: Python, OpenCV, Machine Learning <br> Role: Computer Vision & Data Analysis</div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>📧 saf72606@gmail.com</p>
-  <p>☎ 7358411706</p>
-</section>
-</main>
-<script>
-// = Theme Toggle =
-const themeToggle = document.getElementById('themeToggle');
-const body = document.body;
-function applyTheme(theme) {
-  if (theme === 'dark') {
-    body.classList.add('dark-mode');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    body.classList.remove('dark-mode');
-    localStorage.setItem('theme', 'light');
-  }
-}
-const savedTheme = localStorage.getItem('theme') || 'light';
-applyTheme(savedTheme);
-themeToggle.addEventListener('click', () => {
-  const isDark = body.classList.contains('dark-mode');
-  applyTheme(isDark ? 'light' : 'dark');
-});
-
-// = Reveal Animation =
-const sections = document.querySelectorAll('section');
-const revealOnScroll = () => {
-  const trigger = window.innerHeight * 0.85;
-  sections.forEach(sec => {
-    if(sec.getBoundingClientRect().top < trigger) {
-      sec.style.opacity = 1;
-      sec.style.transform = 'translateY(0)';
-    }
-  });
-};
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
+window.addEventListener('load', revealOnScroll);
 </script>
 </body>
 </html>
