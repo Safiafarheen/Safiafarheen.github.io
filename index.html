@@ -1,73 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Safia Farheen Z R | Professional Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Safia Farheen Z R | Modern Portfolio</title>
 <style>
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 :root {
   --bg-gradient-light: linear-gradient(135deg, #c6e6fb 15%, #d8b4fe 100%);
-  --bg-gradient-dark: linear-gradient(135deg, #301844 20%, #213150 100%);
-  --header-gradient-light: linear-gradient(90deg, #76a7fa 0%, #c084fc 100%);
-  --header-gradient-dark: linear-gradient(90deg, #442c5a 10%, #174070 100%);
-  --nav-gradient-light: linear-gradient(90deg, #8dd5fb 0%, #b6a4fb 100%);
-  --nav-gradient-dark: linear-gradient(90deg, #253554 0%, #5a3b7c 100%);
-  --section-gradient-light: linear-gradient(120deg,#fff 70%,#ebf4ff 100%);
-  --section-gradient-dark: linear-gradient(115deg, #392e4b 70%, #192b3a 100%);
+  --bg-gradient-dark: linear-gradient(135deg, #301844 10%, #213150 100%);
   --primary: #3636b3;
   --accent: #c084fc;
-  --header-text-light: #fff;
-  --header-text-dark: #bda5fc;
 }
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--bg-gradient-light);
   color: #222;
-  min-height: 100vh;
-  transition: background 0.8s;
+  transition: background 0.7s, color 0.7s;
 }
 body.dark-mode {
   background: var(--bg-gradient-dark);
   color: #e2e8f0;
 }
 header {
-  background: var(--header-gradient-light);
-  height: 140px;
+  background: linear-gradient(90deg, #76a7fa 0%, #c084fc 100%);
+  height: 130px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: var(--header-text-light);
+  color: #fff;
   letter-spacing: 2px;
-  text-shadow: 1px 1px 12px #547db1;
   border-bottom-left-radius: 22px;
   border-bottom-right-radius: 22px;
-  animation: headerFadeSlide 1.4s cubic-bezier(.55,0,.1,1);
   position: relative;
-  transition: background 0.8s, color 0.8s;
-}
-body.dark-mode header {
-  background: var(--header-gradient-dark);
-  color: var(--header-text-dark);
-  text-shadow: 0 1px 12px #1c2430;
+  box-shadow: 0 4px 24px #c084fc4c;
+  animation: headerFadeSlide 1.1s cubic-bezier(.55,0,.1,1);
 }
 @keyframes headerFadeSlide {
-  0% { opacity: 0; transform: translateY(-60px);}
-  70% { opacity: .7; }
+  0% { opacity: 0; transform: translateY(-40px);}
+  90% { opacity: .8; }
   100% { opacity: 1; transform: translateY(0);}
 }
 .theme-toggle {
   position: absolute;
-  right: 32px;
+  right: 36px;
   top: 22px;
   font-size: 1.7em;
   cursor: pointer;
   background: #fafafa99;
   color: var(--accent);
   border-radius: 28px;
-  padding: 7px 18px;
+  padding: 8px 18px;
   border: none;
   transition: background 0.3s, color 0.5s, box-shadow 0.3s;
   z-index: 10;
@@ -75,52 +66,68 @@ body.dark-mode header {
 }
 body.dark-mode .theme-toggle { background: #22144f; color: #ebf4ff; box-shadow: 0 2px 12px #bfaaff32;}
 .theme-toggle:hover {
-  background: #d9f7ff;
-  color: #ac33ff;
+  background: #ddd5fa;
+  color: #8a33eb;
   box-shadow: 0 2px 12px #8456e5a7;
 }
 nav {
-  background: var(--nav-gradient-light);
-  padding: 0.5em 0;
+  background: linear-gradient(90deg, #8dd5fb 0%, #b6a4fb 100%);
+  padding: 0.75em 0;
   text-align: center;
   position: sticky;
   top: 0;
-  z-index: 10;
-  box-shadow: 0 4px 8px #91b2c544;
-  border-radius: 0 0 14px 14px;
-  transition: background 0.8s;
+  z-index: 1000;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 8px #b084c544;
 }
-body.dark-mode nav { background: var(--nav-gradient-dark);}
+body.dark-mode nav { background: linear-gradient(90deg, #253554 0%, #5a3b7c 100%);}
 nav a {
   color: var(--primary);
   margin: 0 18px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.08rem;
-  padding: 5px 10px;
+  font-size: 1.05rem;
+  padding: 8px 14px;
   border-radius: 6px;
-  transition: background 0.35s, color 0.32s;
+  transition: background 0.35s, color 0.32s, box-shadow 0.3s;
+  cursor: pointer;
+  display: inline-block;
 }
 nav a:hover {
   background: #faf7ff;
   color: var(--accent);
+  box-shadow: 0 2px 10px #ab66fa54;
 }
 body.dark-mode nav a { color: #ebf4ff;}
-main { padding: 16px 0 40px 0;}
+main {
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Horizontal slide container: Each section is 100vw, flex row box */
+.sections-horizontal {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.7s cubic-bezier(.77,.18,.42,1);
+  will-change: transform;
+}
 section {
-  max-width: 880px;
+  min-width: 100vw;
+  max-width: 900px;
   margin: 36px auto 0 auto;
-  background: var(--section-gradient-light);
-  padding: 32px 28px 25px 28px;
-  border-radius: 24px;
+  background: linear-gradient(120deg,#fff 75%,#ebf4ff 100%);
+  padding: 32px 32px 28px 32px;
+  border-radius: 22px;
   box-shadow: 0 8px 38px 0px #23203b13;
   opacity: 0;
-  transform: translateY(60px) scale(.98);
-  transition: opacity 1.1s cubic-bezier(.42,0,.58,1), 
-      transform 1.0s cubic-bezier(.55,0,.1,1),
-      background 0.8s, color 0.8s;
+  transform: translateY(65px) scale(.98);
+  transition: opacity 1.1s cubic-bezier(.42,0,.58,1),
+              transform 1.0s cubic-bezier(.55,0,.1,1),
+              background 0.8s, color 0.8s;
+  margin-bottom: 24px;
 }
-body.dark-mode section { background: var(--section-gradient-dark); color: #ebf4ff;}
+body.dark-mode section { background: linear-gradient(115deg, #392e4b 60%, #1e2c38 100%); color: #ebf4ff;}
 section.visible {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -132,33 +139,119 @@ h2 {
   letter-spacing: 1px;
   border-bottom: 2px solid #c084fc44;
   padding-bottom: 7px;
-  transition: color 0.8s;}
+  transition: color 0.8s;
+}
 body.dark-mode h2 { color: #c084fc;}
 ul { padding-left: 22px;}
 li { margin: 7px 0;}
-.download-btn {
-  display: inline-block;
-  background: linear-gradient(90deg,#a3d9fa 0%,#c084fc 100%);
-  color: #222;
-  font-weight: 600;
-  border-radius: 17px;
-  padding: 9px 26px;
-  font-size: 1.08em;
-  border: none;
-  margin: 14px 0 12px 0;
-  box-shadow: 0 4px 22px #ab94f312;
+
+/* Skills - modern accordion split */
+#skills-main {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.skill-category {
+  flex: 1 1 280px;
+  background: linear-gradient(135deg, #f0ecff, #def0f8);
+  padding: 20px 24px;
+  border-radius: 14px;
+  box-shadow: 0 0 18px #a58fff49;
+  transition: background 0.5s, box-shadow 0.5s;
   cursor: pointer;
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: background 0.7s, color 0.6s, transform 0.25s;
+  margin-bottom: 15px;
+  outline: none;
   position: relative;
-  overflow: hidden;
 }
-.download-btn:hover {
-  background: linear-gradient(90deg, #c084fc 0%, #a3d9fa 100%);
+body.dark-mode .skill-category {
+  background: linear-gradient(135deg, #392e4b, #201c3f);
+  box-shadow: 0 0 18px #d3bae8;
+}
+.skill-category h3 {
+  margin-top: 0;
+  color: #5736ef;
+  transition: color 0.5s;
+}
+body.dark-mode .skill-category h3 {
+  color: #a57cff;
+}
+.skill-list {
+  max-height: 0;
+  overflow-y: hidden;
+  margin: 0;
+  padding-left: 16px;
+  list-style-type: disc;
+  transition: max-height 0.7s ease, padding 0.6s ease;
+}
+.skill-category.open {
+  background: #e8e1fd;
+  box-shadow: 0 0 40px #7d69da40;
+}
+body.dark-mode .skill-category.open {
+  background: #4e397d;
+  box-shadow: 0 0 23px #a69bff81;
+}
+.skill-category.open .skill-list {
+  max-height: 160px;
+  padding-left: 26px;
+}
+.skill-arrow {
+  position: absolute;
+  right: 14px;
+  top: 24px;
+  font-size: 1.16em;
+  color: #7d53fa;
+  transition: transform 0.6s;
+}
+.skill-category.open .skill-arrow {
+  transform: rotate(90deg);
+}
+
+/* Certifications badges */
+#certifications {
+  text-align: center;
+}
+.cert-badges {
+  margin-top: 25px;
+}
+.cert-badge {
+  display: inline-block;
+  background: #b5a6f8;
+  padding: 10px 28px;
+  margin: 12px 15px;
+  color: #2a154b;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1.07rem;
+  box-shadow: 0 3px 12px #816ae35e;
+  user-select: none;
+  transition:
+    background 0.45s,
+    color 0.45s,
+    box-shadow 0.45s,
+    transform 0.35s;
+  position: relative;
+  animation: badgeAppear 1.25s cubic-bezier(.47,.24,.69,1.27);
+}
+@keyframes badgeAppear {
+  from { opacity: 0; transform: scale(.88);}
+  to { opacity: 1; transform: scale(1);}
+}
+.cert-badge:hover {
+  background: #8853ff;
   color: #fff;
-  transform: translateY(-3px) scale(1.07);
+  box-shadow: 0 0 20px #a369ffcc;
+  transform: scale(1.09) rotate(-3deg);
 }
+body.dark-mode .cert-badge {
+  background: #6f5fb3;
+  color: #e1ddff;
+  box-shadow: 0 3px 12px #8f79eb9c;
+}
+
+/* Projects - keep as is */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -169,17 +262,13 @@ li { margin: 7px 0;}
   border-radius: 18px;
   box-shadow: 0 4px 28px #8571a975;
   overflow: hidden;
-  transition: box-shadow 0.3s, transform 0.3s, background 0.8s, color 0.8s;
+  transition: box-shadow 0.3s, transform 0.3s, background 0.5s;
   padding-bottom: 0;
   position: relative;
-  animation: cardAppear 1.2s cubic-bezier(.37,1.04,.51,1.06);
 }
 body.dark-mode .project-card {
   background: linear-gradient(115deg, #392e4b 60%, #192b3a 100%);
-  color: #ebe7fa;}
-@keyframes cardAppear {
-  from { opacity: 0; transform: scale(.94); }
-  to   { opacity: 1; transform: scale(1); }
+  color: #ebe7fa;
 }
 .project-card:hover {
   box-shadow: 0 12px 38px #3730a3ba;
@@ -190,8 +279,8 @@ body.dark-mode .project-card {
 }
 .project-title {
   margin: 0 0 15px 0;
-  font-size: 1.18em;
-  color: #230363;
+  font-size: 1.16em;
+  color: #312563;
   cursor: pointer;
   transition: color 0.3s;
   outline: none;
@@ -213,39 +302,36 @@ body.dark-mode .project-title { color: #c084fc;}
   box-shadow: 0 2px 12px #d8b4fa22;
   color: #322387;
 }
-body.dark-mode .project-details {
-  background: #201447;
-  color: #dbbeff;}
+body.dark-mode .project-details { background: #201447; color: #dbbeff;}
 .project-card.open .project-details {
   max-height: 350px; padding: 14px 18px 11px 18px;
 }
 .project-details p { font-size: 0.97em; margin: 2px 0 8px 0;}
-@media (max-width: 700px) {.projects {grid-template-columns: 1fr;} nav{font-size: .95em;} }
-.skills-list, .languages-list, .soft-skills-list, .certifications-list {
-  column-count: 2;
-  list-style: inside disc;
+@media (max-width: 800px) {
+  .sections-horizontal { flex-direction: column;}
+  section { min-width: 100vw; }
 }
 </style>
 </head>
 <body>
 <header>
   Safia Farheen Z R
-  <button class="theme-toggle" id="themeToggle" title="Toggle light/dark theme">🌓</button>
+  <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌓</button>
 </header>
 <nav>
-  <a href="#about">About</a>
-  <a href="#education">Education</a>
-  <a href="#internships">Internships</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#certifications">Certifications</a>
-  <a href="#contact">Contact</a>
+  <a href="#about" data-section="about">About</a>
+  <a href="#education" data-section="education">Education</a>
+  <a href="#internships" data-section="internships">Internships</a>
+  <a href="#projects" data-section="projects">Projects</a>
+  <a href="#skills" data-section="skills">Skills</a>
+  <a href="#certifications" data-section="certifications">Certifications</a>
+  <a href="#contact" data-section="contact">Contact</a>
 </nav>
 <main>
+<div class="sections-horizontal">
   <section id="about">
     <h2>About Me</h2>
     <p>A motivated fresher seeking a challenging role to apply and enhance my technical skills while contributing to the growth of the organization.</p>
-    <a class="download-btn" href="Safia_Farheen_Z_R-1.pdf" download>📄 Download My Resume</a>
   </section>
   <section id="education">
     <h2>Education</h2>
@@ -308,27 +394,29 @@ body.dark-mode .project-details {
   </section>
   <section id="skills">
     <h2>Skills</h2>
-    <h3>Technical Skills</h3>
-    <ul class="skills-list">
-      <li>Java</li><li>C</li><li>C++</li><li>Python</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>MySQL</li><li>Ms Office</li>
-    </ul>
-    <h3>Soft Skills</h3>
-    <ul class="soft-skills-list">
-      <li>Problem-solving</li><li>Team collaboration</li><li>Communication</li><li>Adaptability</li><li>Analytical Ability</li><li>Listening skill</li>
-    </ul>
-    <h3>Languages Known</h3>
-    <ul class="languages-list">
-      <li>Tamil (Native)</li><li>English (Fluent)</li><li>Hindi (Basic)</li><li>Urdu (Fluent)</li>
-    </ul>
+    <div id="skills-main">
+      <div class="skill-category" tabindex="0" aria-expanded="false" aria-controls="frontend-skill-list">
+        <h3>Frontend Skills <span class="skill-arrow">▶</span></h3>
+        <ul id="frontend-skill-list" class="skill-list" hidden>
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Angular UI</li>
+        </ul>
+      </div>
+      <div class="skill-category" tabindex="0" aria-expanded="false" aria-controls="backend-skill-list">
+        <h3>Backend Skills <span class="skill-arrow">▶</span></h3>
+        <ul id="backend-skill-list" class="skill-list" hidden>
+          <li>Java</li><li>Spring Boot</li><li>MySQL</li><li>NodeJS</li>
+        </ul>
+      </div>
+    </div>
   </section>
   <section id="certifications">
     <h2>Certifications</h2>
-    <ul class="certifications-list">
-      <li>Java Fullstack Development, TNS India Foundation, Capgemini</li>
-      <li>C, Spoken Tutorial Project IIT Bombay</li>
-      <li>Java, Spoken Tutorial Project IIT Bombay</li>
-      <li>Python, GUVI and IITM</li>
-    </ul>
+    <div class="cert-badges">
+      <span class="cert-badge">Java Fullstack Development, TNS India Foundation, Capgemini</span>
+      <span class="cert-badge">C, Spoken Tutorial Project IIT Bombay</span>
+      <span class="cert-badge">Java, Spoken Tutorial Project IIT Bombay</span>
+      <span class="cert-badge">Python, GUVI and IITM</span>
+    </div>
   </section>
   <section id="contact">
     <h2>Contact</h2>
@@ -337,14 +425,30 @@ body.dark-mode .project-details {
     <p class="contact-info">GitHub: <a href="https://github.com/safiafarheen" target="_blank">github.com/safiafarheen</a></p>
     <p class="contact-info">LinkedIn: <a href="https://www.linkedin.com/in/safiafarheen" target="_blank">linkedin.com/in/safiafarheen</a></p>
   </section>
+</div>
 </main>
 <script>
-// Scroll reveal animation for sections
+// Theme toggle
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  if(document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+});
+if(localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-mode');
+}
+
+// Scroll reveal animation for all sections as they're slid in
 const sections = document.querySelectorAll('section');
 function revealOnScroll() {
   const triggerHeight = window.innerHeight * 0.87;
   sections.forEach(section => {
-    if (section.getBoundingClientRect().top < triggerHeight) {
+    if (section.getBoundingClientRect().top < triggerHeight ||
+        section.getBoundingClientRect().left < window.innerWidth * 0.95) {
       section.classList.add('visible');
     }
   });
@@ -352,7 +456,31 @@ function revealOnScroll() {
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
-// Project card details accordion animation
+// Modern accordion for skills
+const skillCategories = document.querySelectorAll('.skill-category');
+skillCategories.forEach(cat => {
+  cat.addEventListener('click', () => {
+    const isExpanded = cat.getAttribute('aria-expanded') === 'true';
+    skillCategories.forEach(c => {
+      c.setAttribute('aria-expanded', 'false');
+      c.querySelector('.skill-list').hidden = true;
+      c.classList.remove('open');
+    });
+    if (!isExpanded) {
+      cat.setAttribute('aria-expanded', 'true');
+      cat.querySelector('.skill-list').hidden = false;
+      cat.classList.add('open');
+    }
+  });
+  cat.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      cat.click();
+    }
+  });
+});
+
+// Project card accordion
 const projectTitles = document.querySelectorAll('.project-title');
 projectTitles.forEach(title => {
   title.addEventListener('click', () => {
@@ -367,20 +495,28 @@ projectTitles.forEach(title => {
   });
 });
 
-// Theme toggle functionality
-const themeToggle = document.getElementById('themeToggle');
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  if(document.body.classList.contains('dark-mode')) {
-    localStorage.setItem('theme', 'dark');
-  } else {
-    localStorage.setItem('theme', 'light');
-  }
+// Horizontal slide navigation with snap animation
+const navLinks = document.querySelectorAll('nav a');
+const horizontalContainer = document.querySelector('.sections-horizontal');
+const sectionOrder = Array.from(document.querySelectorAll('section')).map(s => s.id);
+
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const sectionId = link.getAttribute('data-section');
+    const index = sectionOrder.indexOf(sectionId);
+    if (index !== -1) {
+      horizontalContainer.style.transform = `translateX(-${100*index}vw)`;
+      setTimeout(() => { revealOnScroll(); }, 100); // ensure animation on slide
+    }
+  });
 });
-// On load, respect saved theme
-if(localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark-mode');
-}
+
+// Show the first section on load
+window.addEventListener('load', () => {
+  horizontalContainer.style.transform = 'translateX(0vw)';
+  revealOnScroll();
+});
 </script>
 </body>
 </html>
