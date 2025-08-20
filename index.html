@@ -3,75 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Safia Farheen Z R | Minimal Tech Portfolio</title>
+  <title>Safia Farheen Z R | Animated Tech Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
   <style>
 :root {
-  --grad1: linear-gradient(120deg, #213e60 0%, #0093af 56%, #00e7ff 100%);
-  --grad2: linear-gradient(90deg, #19a8f6 0%, #70f8ff 100%);
-  --glass-light: rgba(255,255,255,0.83);
-  --glass-dark: rgba(33,50,80,0.92);
-  --neon: #24e0fa;
-  --neon2: #0cc6f7;
+  --bg-grad: linear-gradient(120deg, #1e1a3c 0%, #352258 55%, #32cfff 100%);
+  --glass-light: rgba(255,255,255,0.82);
+  --glass-dark: rgba(36,36,75,0.94);
+  --main-accent: #ac5cf5;
+  --sec-accent: #32cfff;
 }
-html,body{height:100%;margin:0;padding:0;font-family:'Segoe UI',sans-serif;
-background:var(--grad1);color:#13384f;transition:background .7s;}
-body.dark-mode{background:linear-gradient(120deg, #121e32 0%, #0a3454 100%);color:#e7fcff;}
+html,body {
+  min-height:100vh; margin:0; padding:0;
+  font-family:'Segoe UI',sans-serif; background:var(--bg-grad);
+  color:#181933; transition:background .8s cubic-bezier(.55,0,.6,.9);
+  overflow-x:hidden; /* allow vertical scroll, but no horizontal */
+}
+body.dark-mode {
+  background:linear-gradient(120deg, #171132 0%, #225b79 90%);
+  color:#ecf7ff;
+}
 header {
-  background: var(--grad2);box-shadow:0 6px 28px #24e0fa2c;
-  border-bottom-left-radius:32px;border-bottom-right-radius:32px;
-  min-height:110px;display:flex;align-items:center;justify-content:center;position:relative;
+  background: linear-gradient(90deg, #2e2372 0%, #1fcfff 80%);
+  box-shadow: 0 6px 32px #2e237240;
+  border-bottom-left-radius:34px; border-bottom-right-radius:34px;
+  min-height:120px; display:flex; align-items:center; justify-content:center; position:relative;
+  padding-bottom:10px;
+  overflow:hidden;
 }
-header h1 {
-  font-size:2.2rem;font-weight:900;letter-spacing:1.5px;margin:0;
-  background:linear-gradient(110deg,#19a8f6 12%,#0cc6f7 100%);
+h1 {
+  font-family:'Orbitron',sans-serif;
+  font-size:2.9rem;
+  letter-spacing:5px;
+  font-weight:700;
+  margin:0;
+  background:linear-gradient(90deg,#fb0089 22%,#843cf6 60%,#1fcfff 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;color:transparent;
+  filter:drop-shadow(0 5px 28px #c74cca77);
+  text-shadow:0 3px 24px #4026ad45;
+  animation: neonPop 1.21s cubic-bezier(.4,0,.2,1);
 }
-.theme-toggle{position:absolute;top:18px;right:36px;cursor:pointer;font-size:1.2em;padding:8px 16px;border-radius:15px;border:none;background:#e6fcffcd;color:#0d6191;box-shadow:0 1px 11px #07509044;outline:none;}
-body.dark-mode .theme-toggle{background:#15253e;color:#24e0fa;}
-nav{background:rgba(44,62,90,0.93);padding:10px 0;text-align:center;border-bottom:1px solid #39416a;}
+@keyframes neonPop {
+  from {letter-spacing:0; filter:blur(5px) brightness(2);}
+  60%{letter-spacing:0.2em;}
+  to {letter-spacing:5px;}
+}
+.theme-toggle {
+  position:absolute;top:26px;right:36px;cursor:pointer;
+  font-size:1.4em;padding:9px 18px;border-radius:19px;border:none;
+  background:#fff8faed;color:#572fcf;
+  box-shadow:0 0 18px #ac5cf540;
+  outline:none;
+  transition:.27s;
+}
+body.dark-mode .theme-toggle{
+  background:#2a2454;color:#c7fafe;box-shadow:0 0 16px #64d7fa86;
+}
+nav {
+  background:rgba(44,62,90,0.97);padding:10px 0;text-align:center;border-bottom:1px solid #434088;
+}
 nav a {
-  margin: 0 7px; padding:8px 15px;
-  color:#0cc6f7;text-decoration:none;font-weight:700;border-radius:10px;font-size:.99em;transition:.19s;border:1px solid transparent;
+  margin: 0 7px; padding:8px 16px;
+  color:#843cf6;text-decoration:none;font-weight:700;border-radius:12px;font-size:1em;transition:.19s;border:1.5px solid transparent;
 }
-nav a.active,nav a:focus{background:#c0fbff14;color:#147ab0;border-color:var(--neon);}
-nav a:hover{background:rgba(36,224,250,0.08);color:#078abb;}
-body.dark-mode nav a{color:#24e0fa;}
-main{position:relative;width:100vw;height:63vh;overflow:hidden;max-width:800px;margin:0 auto 20px;}
-.sections{width:100vw;height:100%;display:flex;flex-direction:row;position:absolute;top:0;left:0;transition:transform 1s cubic-bezier(.8,0,.36,1);}
+nav a.active,nav a:focus{background:#fd2fe71e;color:#fb0089;border-color:#32cfff;}
+nav a:hover{background:rgba(172,92,245,0.12);color:#32cfff;}
+body.dark-mode nav a{color:#ac5cf5;}
+main{position:relative;width:100vw;height:min(80vh,900px);max-width:980px;margin:0 auto;padding:0 0 30px 0;}
+.sections{width:100vw;height:100%;display:flex;flex-direction:row;transition:transform 0.8s cubic-bezier(.87,0,.54,1);}
 .section-panel{
   width:100vw;min-width:100vw;
-  height: 60vh; max-height:500px;
-  display:flex;justify-content:center;align-items:center;flex-direction:column;
-  background:var(--glass-light);border-radius:23px;
-  margin:32px 0 18px 0; box-shadow:0 7px 29px #25deff2a;
-  opacity:.12;pointer-events:none;z-index:1;
-  filter:blur(3px);transform:scale(.96) rotateY(-28deg);
-  transition:opacity .98s,transform .79s,filter .32s;
+  min-height:420px;
+  display:flex;justify-content:flex-start;align-items:stretch;flex-direction:row;gap:0;
+  background:var(--glass-light);border-radius:30px;box-shadow:0 10px 40px #4110ff22;
+  opacity:0.12;pointer-events:none;z-index:1;
+  filter:blur(4px);transform:scale(.97) translateY(50px);
+  transition:opacity .82s,transform .71s,filter .35s;
+  margin-top:2.5rem;margin-bottom:2rem;
+  overflow:hidden;
 }
 body.dark-mode .section-panel{background:var(--glass-dark);}
 .section-panel.active{
   opacity:1;filter:none;pointer-events:all;
-  transform:scale(1) rotateY(0deg);z-index:2;animation:panelIn .67s;
+  transform:scale(1) translateY(0);z-index:3;
+  animation: sectionIn 1.01s cubic-bezier(.5,0,.4,1) both;
 }
-@keyframes panelIn{
-  0%{transform:translateY(70px) scale(.92) rotateY(-22deg);opacity:0;}
-  to{transform:translateY(0) scale(1) rotateY(0deg);opacity:1;}
+@keyframes sectionIn {
+  0%{opacity:0;transform:scale(.92) translateY(60px);}
+  70%{filter:blur(2px);}
+  to{opacity:1;transform:scale(1) translateY(0);}
+}
+.section-content {
+  flex:2 1 360px; display:flex;flex-direction:column;justify-content:center;
+  padding:3.5rem 2rem 2.4rem 2.7rem; min-width:260px;
+}
+.section-media {
+  flex:1 0 210px; display:flex;align-items:center;justify-content:center;
+  background:transparent;
+  min-width:210px;max-width:320px;
+}
+.section-img {
+  width:170px; height:170px; object-fit:cover; border-radius:22px;
+  box-shadow:0 4px 44px #ac5cf566, 0 0 0 4px #fff4;
+  animation: imgPulse 4s infinite alternate cubic-bezier(.75,0,.43,1);
+  border:3.5px solid #843cf6;
+  background:#fff;
+}
+@keyframes imgPulse {
+  0% {transform:scale(1);}
+  75% {filter:brightness(1.07) drop-shadow(0 0 12px #32cfff);}
+  100% {transform:scale(1.05);}
 }
 .section-panel h2{
-  letter-spacing:1.1px;
-  color:#0ae7ff;font-size:1.2em;font-weight:700;margin-bottom:10px;background:linear-gradient(90deg,#24e0fa 0%,#0cc6f7 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:-10px;
+  font-family:'Orbitron',sans-serif; font-size:1.45em; font-weight:700; color:#843cf6;letter-spacing:1px;
+  background:linear-gradient(90deg,#ff4edb 15%,#32cfff 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  animation: headingIn .82s;
 }
-.section-panel p, .section-panel ul{font-size:1.09em;line-height:1.7;max-width:490px;color:#27435c;}
-body.dark-mode .section-panel p,body.dark-mode .section-panel ul{color:#e4f7fd;}
+@keyframes headingIn{from{opacity:.43;letter-spacing:-0.2em;}to{opacity:1;letter-spacing:1px;}}
+.section-panel p, .section-panel ul{font-size:1.1em;line-height:1.7;max-width:530px;}
 .section-panel ul{margin:10px 0 0 0;}
-#contact{margin:40px auto 10px auto;max-width:400px;background:rgba(36,49,69,0.93);
-border-radius:16px;padding:18px 22px;box-shadow:0 0 20px #24e0fa30;color:#12eafc;text-align:center;}
+.section-panel li{margin-bottom:3px;}
+#contact{margin:36px auto 20px auto;max-width:400px;background:rgba(36,49,69,0.96);border-radius:16px;padding:18px 22px;box-shadow:0 0 18px #ac5cf530;color:#843cf6;text-align:center;}
 body.dark-mode #contact{background:rgba(20,27,45,0.98);}
-#contact h2{color:#24e0fa;}
-#contact a{color:#24e0fa;text-decoration:none;}
+#contact h2{color:#ac5cf5;}
+#contact a{color:#32cfff;text-decoration:none;}
 #contact a:hover{text-decoration:underline;}
-::-webkit-scrollbar{height:0;width:0;}
+@media (max-width:900px){
+  main{height:auto; min-height:unset;}
+  .section-panel, .sections{width:100vw;}
+  .section-panel{flex-direction:column;min-height:unset;}
+  .section-media{max-width:100vw;justify-content:flex-end;}
+  .section-img{margin:0 0 16px 0;}
+  .section-content{padding:2rem 1.3rem;}
+}
   </style>
 </head>
 <body>
@@ -92,79 +158,119 @@ body.dark-mode #contact{background:rgba(20,27,45,0.98);}
 <main>
 <div class="sections" id="sections">
   <section class="section-panel active" id="about">
-    <h2>About Me</h2>
-    <p>
-      I am an energetic, tech-driven graduate eager to learn and contribute.  
-      Driven by curiosity and teamwork, I approach challenges with logic and a growth mindset.
-    </p>
-    <ul>
-      <li>Quick to adapt to new technologies</li>
-      <li>Problem solving and positive attitude</li>
-      <li>Highly collaborative and professional</li>
-    </ul>
+    <div class="section-content">
+      <h2>About Me</h2>
+      <p>
+        I am an energetic, tech-driven graduate eager to learn and contribute now.<br>
+        Driven by curiosity and teamwork, I approach challenges with logic and a growth mindset.
+      </p>
+      <ul>
+        <li>Quick to adapt to new technologies</li>
+        <li>Proactive problem-solving</li>
+        <li>Collaborative and positive attitude</li>
+      </ul>
+    </div>
+    <div class="section-media">
+      <img class="section-img" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="About Illustration">
+    </div>
   </section>
   <section class="section-panel" id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>B.E. Electronics & Communication Engineering</strong><br> Mohammed Sathak AJ College of Engineering, Chennai (2021—2025) | CGPA: 7.8</li>
-      <li>12th State Board, Little Jacky Matriculation HSS, Chengalpattu, 2021 | 86%</li>
-      <li>10th State Board, St. Mary’s Girls HSS, Chengalpattu, 2019 | 79%</li>
-    </ul>
+    <div class="section-content">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>B.E. Electronics & Communication Engineering</strong><br> Mohammed Sathak AJ College of Engineering, Chennai (2021—2025) | CGPA: 7.8</li>
+        <li>12th State Board, Little Jacky Matriculation HSS, Chengalpattu, 2021 | 86%</li>
+        <li>10th State Board, St. Mary’s Girls HSS, Chengalpattu, 2019 | 79%</li>
+      </ul>
+    </div>
+    <div class="section-media">
+      <img class="section-img" src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=80" alt="Education Illustration">
+    </div>
   </section>
   <section class="section-panel" id="internships">
-    <h2>Internships</h2>
-    <p>
-      <strong>ZOHO TECHS (2023)</strong> — Developed a secure, modular e-commerce web app (Java & Angular). Delivered login with JWT, cart module, UI improvements, and participated in code reviews.
-    </p>
+    <div class="section-content">
+      <h2>Internships</h2>
+      <p>
+        <strong>ZOHO TECHS (2023)</strong> — Developed a secure, modular e-commerce web app (Java & Angular). Delivered login with JWT, cart module, UI improvements, and participated in code reviews.
+      </p>
+    </div>
+    <div class="section-media">
+      <img class="section-img" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Internship Illustration">
+    </div>
   </section>
   <section class="section-panel" id="achievements">
-    <h2>Achievements</h2>
-    <ul>
-      <li>2nd Runner Up — Capgemini’s Tech4Positive Future Challenge 2024 (Youth Voice Edition)</li>
-      <li>TNSIF Java Fullstack Development program graduate</li>
-      <li>IIT Bombay and GUVI certificate winner</li>
-    </ul>
+    <div class="section-content">
+      <h2>Achievements</h2>
+      <ul>
+        <li>2nd Runner Up — Capgemini’s Tech4Positive Future Challenge 2024 (Youth Voice Edition)</li>
+        <li>TNSIF Java Fullstack Development program graduate</li>
+        <li>IIT Bombay and GUVI certificate winner</li>
+      </ul>
+    </div>
+    <div class="section-media">
+      <img class="section-img" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Achievement Illustration">
+    </div>
   </section>
   <section class="section-panel" id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>E-Commerce Website</strong> — Product browse/cart/checkout web app using Java (backend) and Angular (frontend).</li>
-      <li><strong>Placement Management System</strong> — Platform for campus placements, built with Java, Spring Boot, AngularJS, NodeJS & SQL.</li>
-      <li><strong>To-Do List App</strong> — ML-based task prioritization (Python backend, React frontend).</li>
-      <li><strong>Gait Analysis for Runners</strong> — ML and image processing (Python, OpenCV) for form analysis.</li>
-    </ul>
+    <div class="section-content">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>E-Commerce Website</strong> — Product browse/cart/checkout web app using Java (backend) and Angular (frontend).</li>
+        <li><strong>Placement Management System</strong> — Campus platform for placements (Java, Spring Boot, AngularJS, NodeJS & SQL).</li>
+        <li><strong>To-Do List App</strong> — ML-based task prioritization (Python backend, React frontend).</li>
+        <li><strong>Gait Analysis</strong> — ML & OpenCV for athletic analysis.</li>
+      </ul>
+    </div>
+    <div class="section-media">
+      <img class="section-img" src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=400&q=80" alt="Project Illustration">
+    </div>
   </section>
   <section class="section-panel" id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Angular, React</li>
-      <li><strong>Backend:</strong> Java, Spring Boot, NodeJS, MySQL</li>
-      <li><strong>Other:</strong> Python, Basic ML, Teamwork, Communication</li>
-    </ul>
+    <div class="section-content">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Angular, React</li>
+        <li><strong>Backend:</strong> Java, Spring Boot, NodeJS, MySQL</li>
+        <li><strong>Other:</strong> Python, Basic ML, Teamwork, Communication</li>
+      </ul>
+    </div>
+    <div class="section-media">
+      <img class="section-img" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="Skill Illustration">
+    </div>
   </section>
   <section class="section-panel" id="certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li>Java Fullstack Development, TNS India Foundation, Capgemini</li>
-      <li>C, Spoken Tutorial Project IIT Bombay</li>
-      <li>Java, Spoken Tutorial Project IIT Bombay</li>
-      <li>Cpp, Spoken Tutorial IIT Bombay</li>
-      <li>Python, GUVI and IITM</li>
-      <li>Diploma of Completion, UiPath Academy – Build Your First Process With Studio</li>
-      <li>ChatGPT for Everyone – GUVI</li>
-      <li>Palo Alto Networks Cybersecurity Academy - Student Certificate of Completion</li>
-    </ul>
+    <div class="section-content">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Java Fullstack Development, TNS India Foundation, Capgemini</li>
+        <li>C, Spoken Tutorial Project IIT Bombay</li>
+        <li>Java, Spoken Tutorial Project IIT Bombay</li>
+        <li>Cpp, Spoken Tutorial IIT Bombay</li>
+        <li>Python, GUVI and IITM</li>
+        <li>Diploma of Completion, UiPath Academy – Build Your First Process With Studio</li>
+        <li>ChatGPT for Everyone – GUVI</li>
+        <li>Palo Alto Networks Cybersecurity Academy - Student Certificate of Completion</li>
+      </ul>
+    </div>
+    <div class="section-media">
+      <img class="section-img" src="https://images.unsplash.com/photo-1465101178521-c1a9136a67ab?auto=format&fit=crop&w=400&q=80" alt="Certification Illustration">
+    </div>
   </section>
   <section class="section-panel" id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:saf72606@gmail.com">saf72606@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/safiafarheen" target="_blank">github.com/safiafarheen</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/safiafarheen" target="_blank">linkedin.com/in/safiafarheen</a></p>
+    <div class="section-content">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:saf72606@gmail.com">saf72606@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/safiafarheen" target="_blank">github.com/safiafarheen</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/safiafarheen" target="_blank">linkedin.com/in/safiafarheen</a></p>
+    </div>
+    <div class="section-media">
+      <img class="section-img" src="https://images.unsplash.com/photo-1485218128980-11786ced9454?auto=format&fit=crop&w=400&q=80" alt="Contact Illustration">
+    </div>
   </section>
 </div>
 </main>
 <script>
-// Toggle functionality
+// Theme toggle
 const themeToggle = document.getElementById('themeToggle');
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
