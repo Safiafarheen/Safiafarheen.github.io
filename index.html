@@ -3,144 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Safia Farheen Z R | Futuristic Portfolio</title>
+  <title>Safia Farheen Z R | Minimal Tech Portfolio</title>
   <style>
 :root {
-  --grad1: linear-gradient(120deg, #232b41 0%, #065ac7 56%, #00f2fe 100%);
-  --grad2: linear-gradient(90deg, #23c6e4 0%, #a0e9f7 100%);
-  --glass-light: rgba(255,255,255,0.82);
-  --glass-dark: rgba(34,42,64,0.92);
-  --neon: #31f1ff;
-  --neon2: #13e8c7;
+  --grad1: linear-gradient(120deg, #213e60 0%, #0093af 56%, #00e7ff 100%);
+  --grad2: linear-gradient(90deg, #19a8f6 0%, #70f8ff 100%);
+  --glass-light: rgba(255,255,255,0.83);
+  --glass-dark: rgba(33,50,80,0.92);
+  --neon: #24e0fa;
+  --neon2: #0cc6f7;
 }
-html,body{
-  height:100%;margin:0;padding:0;font-family:'Segoe UI',sans-serif;
-  background:var(--grad1);color:#102141;transition:background .8s;
-  overflow:hidden;
-}
-body.dark-mode{
-  background:linear-gradient(120deg, #060918 0%, #051e42 100%);
-  color:#d2f4f6;
-}
+html,body{height:100%;margin:0;padding:0;font-family:'Segoe UI',sans-serif;
+background:var(--grad1);color:#13384f;transition:background .7s;}
+body.dark-mode{background:linear-gradient(120deg, #121e32 0%, #0a3454 100%);color:#e7fcff;}
 header {
-  background: var(--grad2);box-shadow:0 6px 28px #31f1ff30;
+  background: var(--grad2);box-shadow:0 6px 28px #24e0fa2c;
   border-bottom-left-radius:32px;border-bottom-right-radius:32px;
-  min-height:130px;display:flex;align-items:center;justify-content:center;position:relative;
+  min-height:110px;display:flex;align-items:center;justify-content:center;position:relative;
 }
 header h1 {
-  font-size:2.5rem;font-weight:900;letter-spacing:2px;margin:0;
-  background:linear-gradient(110deg,#23c6e4 15%,#13e8c7 100%);
+  font-size:2.2rem;font-weight:900;letter-spacing:1.5px;margin:0;
+  background:linear-gradient(110deg,#19a8f6 12%,#0cc6f7 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  filter:drop-shadow(0 3px 19px #13e8c744);
 }
-.theme-toggle {
-  position:absolute;top:18px;right:36px;cursor:pointer;
-  font-size:1.4em;padding:9px 18px;border-radius:19px;border:none;
-  background:#e6fcffcc;color:#066585;box-shadow:0 0 16px #065ac77d;
-  outline:none;transition:.25s;
-}
-body.dark-mode .theme-toggle{background:#1b233c;color:#31f1ff;}
-nav {
-  background:rgba(44,62,90,0.94);padding:10px 0;text-align:center;
-  border-bottom:1px solid #434968;
-  box-shadow:0 4px 18px #23c6e41a;
-}
+.theme-toggle{position:absolute;top:18px;right:36px;cursor:pointer;font-size:1.2em;padding:8px 16px;border-radius:15px;border:none;background:#e6fcffcd;color:#0d6191;box-shadow:0 1px 11px #07509044;outline:none;}
+body.dark-mode .theme-toggle{background:#15253e;color:#24e0fa;}
+nav{background:rgba(44,62,90,0.93);padding:10px 0;text-align:center;border-bottom:1px solid #39416a;}
 nav a {
-  margin: 0 8px; padding:10px 20px;
-  color:#21e4fc;text-decoration:none;
-  font-weight:700;border-radius:13px;
-  font-size:1em;transition:.22s;border:1.5px solid transparent;display:inline-block;
+  margin: 0 7px; padding:8px 15px;
+  color:#0cc6f7;text-decoration:none;font-weight:700;border-radius:10px;font-size:.99em;transition:.19s;border:1px solid transparent;
 }
-nav a.active,nav a:focus{
-  background:#bafdff1e;
-  color:#1989b6;
-  border-color:var(--neon);
-  box-shadow:0 0 9px #31f1ff7c;
-}
-nav a:hover{
-  background:rgba(18,237,250,0.08);
-  color:#066585;
-  border-color: #13e8c7;
-}
-body.dark-mode nav a{color:#31f1ff;}
-main{position:relative;width:100vw;height:72vh;overflow:hidden;max-width:960px;margin:0 auto 30px;}
-.sections{
-  width:100vw;height:100%;
-  display:flex;flex-direction:row;position:absolute;top:0;left:0;
-  transition:transform 1s cubic-bezier(.8,0,.36,1);
-}
+nav a.active,nav a:focus{background:#c0fbff14;color:#147ab0;border-color:var(--neon);}
+nav a:hover{background:rgba(36,224,250,0.08);color:#078abb;}
+body.dark-mode nav a{color:#24e0fa;}
+main{position:relative;width:100vw;height:63vh;overflow:hidden;max-width:800px;margin:0 auto 20px;}
+.sections{width:100vw;height:100%;display:flex;flex-direction:row;position:absolute;top:0;left:0;transition:transform 1s cubic-bezier(.8,0,.36,1);}
 .section-panel{
   width:100vw;min-width:100vw;
-  height: 68vh; max-height:660px;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
-  padding:32px 40px 32px 40px;
-  background:var(--glass-light);border-radius:32px;
-  margin:32px 0 30px 0; box-shadow:0 9px 36px 0 #81effe28;
-  opacity:.13;pointer-events:none;z-index:1;
-  filter:blur(4px) grayscale(.18);transform:scale(.96) rotateY(-32deg);
-  transition:opacity 1.03s,transform .92s,filter 0.55s;
+  height: 60vh; max-height:500px;
+  display:flex;justify-content:center;align-items:center;flex-direction:column;
+  background:var(--glass-light);border-radius:23px;
+  margin:32px 0 18px 0; box-shadow:0 7px 29px #25deff2a;
+  opacity:.12;pointer-events:none;z-index:1;
+  filter:blur(3px);transform:scale(.96) rotateY(-28deg);
+  transition:opacity .98s,transform .79s,filter .32s;
 }
 body.dark-mode .section-panel{background:var(--glass-dark);}
 .section-panel.active{
   opacity:1;filter:none;pointer-events:all;
-  transform:scale(1) rotateY(0deg);z-index:2;
-  animation:panelIn .7s cubic-bezier(.51,.02,.31,.99);
+  transform:scale(1) rotateY(0deg);z-index:2;animation:panelIn .67s;
 }
 @keyframes panelIn{
-  0%{transform:translateY(100px) scale(.9) rotateY(-30deg);opacity:0;}
-  70%{transform:scale(1.09) rotateY(19deg);}
+  0%{transform:translateY(70px) scale(.92) rotateY(-22deg);opacity:0;}
   to{transform:translateY(0) scale(1) rotateY(0deg);opacity:1;}
 }
-.section-panel .textcol{width:53%;min-width:230px;padding-right:14px;}
-.section-panel .media{flex:1;display:flex;justify-content:center;align-items:center;}
-.section-panel img.illus{
-  width:200px;height:200px;object-fit:cover;border-radius:20px;box-shadow:0 5px 34px #23f2ff97;opacity:0.97;
-  animation:floatimg 4.5s ease-in-out infinite alternate;
-}
-@keyframes floatimg{0%{transform:translateY(7px);}100%{transform:translateY(-25px);}}
 .section-panel h2{
   letter-spacing:1.1px;
-  color:#09defd;font-size:1.37em;font-weight:700;margin-bottom:13px;margin-top:0;
-  background:linear-gradient(90deg,#13e8c7 10%,#31f1ff 90%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  color:#0ae7ff;font-size:1.2em;font-weight:700;margin-bottom:10px;background:linear-gradient(90deg,#24e0fa 0%,#0cc6f7 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:-10px;
 }
-.section-panel p,.section-panel ul{
-  font-size:1.08em;line-height:1.67;color:#293048;
-}
-body.dark-mode .section-panel p, body.dark-mode .section-panel ul{color:#e1fffd;}
-.section-panel ul{margin-top:7px;}
-#projects .card-list{gap:20px;}
-#projects .project-card{
-  background:rgba(21,41,60,0.92);border-radius:15px;margin-bottom:9px;
-  box-shadow:0 2px 24px #31f1ff30; padding-bottom:0;
-  transition:.24s;
-}
-@keyframes projectInZ{0%{opacity:0;transform:scale(.82) rotateY(-90deg);}60%{transform:scale(1.08) rotateY(13deg);}to{opacity:1;transform:scale(1) rotateY(0deg);}}
-.project-card:hover{box-shadow:0 8px 52px #27e1c1b0;}
-.project-img{width:100%;height:110px;object-fit:cover;}
-.project-title{margin:0;color:#09defd;font-size:1.08em;font-weight:600;cursor:pointer;transition:color 0.19s;}
-.project-title:hover{color:#2fc2e4;}
-.project-details{max-height:0;overflow:hidden;transition:max-height .41s,padding .35s;opacity:.29;background:rgba(19,39,58,0.85);border-radius:0 0 11px 11px;padding:0 10px;}
-.project-card.open .project-details{max-height:170px;opacity:1;padding:10px 14px 10px 13px;}
-.card-list{display:grid;grid-template-columns:1fr 1fr;}
-@media(max-width:890px){.card-list{grid-template-columns:1fr;}}
-.skill-row{display:flex;gap:23px;}
-.skill-listing{background:rgba(13,227,250,.08);border-radius:12px;padding:13px 10px;}
-.skill-title{color:#31f1ff;font-weight:700;font-size:1.02em;}
-ul.skill-list{margin:6px 0 2px 17px;}
-.cert-badge{display:inline-block;background:#13e8c7;padding:9px 19px;margin:9px 6px 11px 5px;color:#191d25;border-radius:40px;font-weight:600;font-size:1em;box-shadow:0 3px 12px #13e8c780;user-select:none;transition:background .4s,color .4s,transform .2s;}
-body.dark-mode .cert-badge{background:#1ad1ae;color:#e2fff2;}
-.cert-badge:hover{background:#09defd;color:#09121e;box-shadow:0 0 26px #31f1ff50;transform:scale(1.07);}
-#contact{
-  margin:50px auto 30px auto;max-width:600px;
-  background:rgba(36,49,69,0.95);border-radius:16px;
-  padding:20px 28px;
-  box-shadow:0 0 22px #13e8c770;
-  color:#12eafc;text-align:center;
-}
-body.dark-mode #contact{background:rgba(14,27,45,0.94);}
-#contact h2{color:#13e8c7;}
-#contact a{color:#13e8c7;text-decoration:none;}
+.section-panel p, .section-panel ul{font-size:1.09em;line-height:1.7;max-width:490px;color:#27435c;}
+body.dark-mode .section-panel p,body.dark-mode .section-panel ul{color:#e4f7fd;}
+.section-panel ul{margin:10px 0 0 0;}
+#contact{margin:40px auto 10px auto;max-width:400px;background:rgba(36,49,69,0.93);
+border-radius:16px;padding:18px 22px;box-shadow:0 0 20px #24e0fa30;color:#12eafc;text-align:center;}
+body.dark-mode #contact{background:rgba(20,27,45,0.98);}
+#contact h2{color:#24e0fa;}
+#contact a{color:#24e0fa;text-decoration:none;}
 #contact a:hover{text-decoration:underline;}
 ::-webkit-scrollbar{height:0;width:0;}
   </style>
@@ -162,58 +91,89 @@ body.dark-mode #contact{background:rgba(14,27,45,0.94);}
 </nav>
 <main>
 <div class="sections" id="sections">
-  <!-- ... as in your code: About/Education/.../Skills sections ... -->
   <section class="section-panel active" id="about">
-    <div class="textcol">
-      <h2>About Me</h2>
-      <p>A motivated fresher seeking top tech opportunities to grow and use my skillset for organization success.</p>
-      <ul>
-        <li>Quick learner & proactive problem solver</li>
-        <li>Great team spirit and communication</li>
-        <li>Love to work on innovative products & tech</li>
-      </ul>
-    </div>
-    <div class="media">
-      <img class="illus" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="About Illustration">
-    </div>
+    <h2>About Me</h2>
+    <p>
+      I am an energetic, tech-driven graduate eager to learn and contribute.  
+      Driven by curiosity and teamwork, I approach challenges with logic and a growth mindset.
+    </p>
+    <ul>
+      <li>Quick to adapt to new technologies</li>
+      <li>Problem solving and positive attitude</li>
+      <li>Highly collaborative and professional</li>
+    </ul>
   </section>
-  <!-- ...repeat for Education, Internships, Achievements, Projects, Skills... -->
+  <section class="section-panel" id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>B.E. Electronics & Communication Engineering</strong><br> Mohammed Sathak AJ College of Engineering, Chennai (2021—2025) | CGPA: 7.8</li>
+      <li>12th State Board, Little Jacky Matriculation HSS, Chengalpattu, 2021 | 86%</li>
+      <li>10th State Board, St. Mary’s Girls HSS, Chengalpattu, 2019 | 79%</li>
+    </ul>
+  </section>
+  <section class="section-panel" id="internships">
+    <h2>Internships</h2>
+    <p>
+      <strong>ZOHO TECHS (2023)</strong> — Developed a secure, modular e-commerce web app (Java & Angular). Delivered login with JWT, cart module, UI improvements, and participated in code reviews.
+    </p>
+  </section>
+  <section class="section-panel" id="achievements">
+    <h2>Achievements</h2>
+    <ul>
+      <li>2nd Runner Up — Capgemini’s Tech4Positive Future Challenge 2024 (Youth Voice Edition)</li>
+      <li>TNSIF Java Fullstack Development program graduate</li>
+      <li>IIT Bombay and GUVI certificate winner</li>
+    </ul>
+  </section>
+  <section class="section-panel" id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>E-Commerce Website</strong> — Product browse/cart/checkout web app using Java (backend) and Angular (frontend).</li>
+      <li><strong>Placement Management System</strong> — Platform for campus placements, built with Java, Spring Boot, AngularJS, NodeJS & SQL.</li>
+      <li><strong>To-Do List App</strong> — ML-based task prioritization (Python backend, React frontend).</li>
+      <li><strong>Gait Analysis for Runners</strong> — ML and image processing (Python, OpenCV) for form analysis.</li>
+    </ul>
+  </section>
+  <section class="section-panel" id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Angular, React</li>
+      <li><strong>Backend:</strong> Java, Spring Boot, NodeJS, MySQL</li>
+      <li><strong>Other:</strong> Python, Basic ML, Teamwork, Communication</li>
+    </ul>
+  </section>
   <section class="section-panel" id="certifications">
-    <div class="textcol">
-      <h2>Certifications</h2>
-      <span class="cert-badge">Java Fullstack Development, TNS India Foundation, Capgemini</span>
-      <span class="cert-badge">C, Spoken Tutorial Project IIT Bombay</span>
-      <span class="cert-badge">Java, Spoken Tutorial Project IIT Bombay</span>
-      <span class="cert-badge">Cpp, Spoken Tutorial IIT Bombay</span>
-      <span class="cert-badge">Python, GUVI and IITM</span>
-      <span class="cert-badge">Diploma of Completion, UiPath Academy – Build Your First Process With Studio</span>
-      <span class="cert-badge">ChatGPT for Everyone – GUVI</span>
-      <span class="cert-badge">Palo Alto Networks Cybersecurity Academy Certificate</span>
-      </div>
-    </div>
-    <div class="media">
-      <img class="illus" src="https://images.unsplash.com/photo-1465101178521-c1a9136a67ab?auto=format&fit=crop&w=400&q=80" alt="Certification Illustration">
-    </div>
+    <h2>Certifications</h2>
+    <ul>
+      <li>Java Fullstack Development, TNS India Foundation, Capgemini</li>
+      <li>C, Spoken Tutorial Project IIT Bombay</li>
+      <li>Java, Spoken Tutorial Project IIT Bombay</li>
+      <li>Cpp, Spoken Tutorial IIT Bombay</li>
+      <li>Python, GUVI and IITM</li>
+      <li>Diploma of Completion, UiPath Academy – Build Your First Process With Studio</li>
+      <li>ChatGPT for Everyone – GUVI</li>
+      <li>Palo Alto Networks Cybersecurity Academy - Student Certificate of Completion</li>
+    </ul>
   </section>
-  <!-- ...other section-panels... -->
+  <section class="section-panel" id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:saf72606@gmail.com">saf72606@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/safiafarheen" target="_blank">github.com/safiafarheen</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/safiafarheen" target="_blank">linkedin.com/in/safiafarheen</a></p>
+  </section>
 </div>
 </main>
 <script>
-// Theme toggle
+// Toggle functionality
 const themeToggle = document.getElementById('themeToggle');
-function setTheme(isDark) {
-  if(isDark) {
-    document.body.classList.add('dark-mode');
-    localStorage.setItem('theme','dark');
-  } else {
-    document.body.classList.remove('dark-mode');
-    localStorage.setItem('theme','light');
-  }
-}
-themeToggle.addEventListener('click',()=>setTheme(!document.body.classList.contains('dark-mode')));
-window.addEventListener('DOMContentLoaded',()=>{setTheme(localStorage.getItem('theme')==='dark');});
-
-// Flawless slide navigation
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+});
+window.addEventListener('DOMContentLoaded',()=> {
+  if(localStorage.getItem('theme')==='dark'){document.body.classList.add('dark-mode');}
+});
+// Slide navigation
 const navs = document.querySelectorAll('nav a');
 const sections = document.querySelectorAll('.section-panel');
 const container = document.getElementById('sections');
@@ -226,15 +186,9 @@ function showSection(idx){
   sections[idx].classList.add('active');
   current=idx;
 }
-navs.forEach((nav,idx)=>{
-  nav.addEventListener('click',e=>{
-    e.preventDefault();
-    showSection(idx);
-  });
-});
-// Keyboard navigation
+navs.forEach((nav,idx)=>{nav.addEventListener('click',e=>{e.preventDefault();showSection(idx);});});
 document.addEventListener('keydown',function(e){
-  if(e.target.tagName==='BODY'){
+  if(['BODY','HTML'].includes(e.target.tagName)){
     if((e.key==='ArrowRight'||e.key==='PageDown') && current<sections.length-1){showSection(current+1);}
     if((e.key==='ArrowLeft'||e.key==='PageUp') && current>0){showSection(current-1);}
   }
