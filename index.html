@@ -6,163 +6,141 @@
   <title>Safia Farheen Z R | Futuristic Portfolio</title>
   <style>
 :root {
-  --grad1: linear-gradient(120deg, #0f2027 0%, #2c5364 56%, #00c9ff 100%);
-  --grad2: linear-gradient(90deg, #2bc0e4 0%, #eaecc6 100%);
-  --glass-light: rgba(255,255,255,0.76);
-  --glass-dark: rgba(28,36,58,0.84);
-  --neon: #12e8fa;
-  --neon2: #27e1c1;
-  --black: #191e29;
+  --grad1: linear-gradient(120deg, #232b41 0%, #065ac7 56%, #00f2fe 100%);
+  --grad2: linear-gradient(90deg, #23c6e4 0%, #a0e9f7 100%);
+  --glass-light: rgba(255,255,255,0.82);
+  --glass-dark: rgba(34,42,64,0.92);
+  --neon: #31f1ff;
+  --neon2: #13e8c7;
 }
-html, body {
-  min-height:100vh; margin:0; padding:0;
-  font-family:'Segoe UI',sans-serif;
-  background:var(--grad1);
-  color:#0d253f;
-  overflow: hidden;
-  transition: background 1.2s cubic-bezier(.6,.1,.6,1);
+html,body{
+  height:100%;margin:0;padding:0;font-family:'Segoe UI',sans-serif;
+  background:var(--grad1);color:#102141;transition:background .8s;
+  overflow:hidden;
 }
-body.dark-mode {
-  background: linear-gradient(120deg, #0e0727 0%, #050721 100%);
-  color: #e8feff;
+body.dark-mode{
+  background:linear-gradient(120deg, #060918 0%, #051e42 100%);
+  color:#d2f4f6;
 }
 header {
-  background: var(--grad2); box-shadow: 0 6px 28px #22e9f333;
+  background: var(--grad2);box-shadow:0 6px 28px #31f1ff30;
   border-bottom-left-radius:32px;border-bottom-right-radius:32px;
-  min-height:150px; display:flex; align-items:center; justify-content:center; position:relative;
+  min-height:130px;display:flex;align-items:center;justify-content:center;position:relative;
 }
 header h1 {
-  font-size:2.6rem; font-weight:900; letter-spacing:2px; margin:0;
-  background:linear-gradient(110deg,#2bc0e4 15%,#21d4fd 70%,var(--neon2) 100%);
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-  filter:drop-shadow(0 4px 24px #03d5eb55);
+  font-size:2.5rem;font-weight:900;letter-spacing:2px;margin:0;
+  background:linear-gradient(110deg,#23c6e4 15%,#13e8c7 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 3px 19px #13e8c744);
 }
 .theme-toggle {
-  position:absolute;top:28px;right:40px;cursor:pointer;
-  font-size:1.5em;padding:10px 20px;border-radius:19px;border:none;
-  background:#f0f6fa;color:#00717d;box-shadow:0 0 12px #37f9e633;
+  position:absolute;top:18px;right:36px;cursor:pointer;
+  font-size:1.4em;padding:9px 18px;border-radius:19px;border:none;
+  background:#e6fcffcc;color:#066585;box-shadow:0 0 16px #065ac77d;
   outline:none;transition:.25s;
 }
-body.dark-mode .theme-toggle{
-  background:#1c243a; color:var(--neon); box-shadow:0 0 20px #24eaf8;
-}
+body.dark-mode .theme-toggle{background:#1b233c;color:#31f1ff;}
 nav {
-  background:rgba(44,62,90,0.93); padding:15px 0; text-align:center;
-  border-bottom:1.5px solid #222c;
-  box-shadow:0 4px 18px #2bc0e42a;
+  background:rgba(44,62,90,0.94);padding:10px 0;text-align:center;
+  border-bottom:1px solid #434968;
+  box-shadow:0 4px 18px #23c6e41a;
 }
 nav a {
   margin: 0 8px; padding:10px 20px;
-  color:#26c3e7;text-decoration:none;
-  font-weight:700; border-radius:13px;
-  font-size:1em;background:none;transition:.25s;
-  border:1.5px solid transparent;
-  display:inline-block;
-  box-shadow:0 0 0 #0dcfff30;
+  color:#21e4fc;text-decoration:none;
+  font-weight:700;border-radius:13px;
+  font-size:1em;transition:.22s;border:1.5px solid transparent;display:inline-block;
 }
-nav a.active, nav a:focus {
-  background:#d3fcff17;
-  color:#007fad; border-color:var(--neon);
-  box-shadow: 0 0 18px #00f1ff55;
+nav a.active,nav a:focus{
+  background:#bafdff1e;
+  color:#1989b6;
+  border-color:var(--neon);
+  box-shadow:0 0 9px #31f1ff7c;
 }
-nav a:hover {
-  background:rgba(24,187,234,0.14);
-  color:#14e6f5; border-color: #42f8e6;
+nav a:hover{
+  background:rgba(18,237,250,0.08);
+  color:#066585;
+  border-color: #13e8c7;
 }
-body.dark-mode nav a {
-  color:#12e8fa;
-}
-main {
-  position:relative;
-  width:100vw;
-  height: 78vh;
-  overflow:hidden;
-  margin:0 auto;
-  max-width:980px;
-  margin-bottom:40px;
-}
-.sections {
+body.dark-mode nav a{color:#31f1ff;}
+main{position:relative;width:100vw;height:72vh;overflow:hidden;max-width:960px;margin:0 auto 30px;}
+.sections{
   width:100vw;height:100%;
-  display:flex;flex-direction:row; position:absolute; top:0; left:0;
-  transition:transform 1.06s cubic-bezier(.8,0,.44,1);
+  display:flex;flex-direction:row;position:absolute;top:0;left:0;
+  transition:transform 1s cubic-bezier(.8,0,.36,1);
 }
-.section-panel {
+.section-panel{
   width:100vw;min-width:100vw;
-  height: 72vh; max-height:700px;
+  height: 68vh; max-height:660px;
   display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
-  padding:38px 50px 38px 50px;
-  position:relative;
-  background:var(--glass-light);
-  border-radius:32px;
-  margin: 36px 0 30px 0;
-  box-shadow: 0 9px 44px 0 #d8fff930;
-  opacity:.18; pointer-events:none; z-index:1;
-  filter:blur(6px) grayscale(.22);
-  transform:scale(.96) rotateY(-52deg);
-  transition:opacity 1.13s,transform 1.09s,filter 0.65s;
+  padding:32px 40px 32px 40px;
+  background:var(--glass-light);border-radius:32px;
+  margin:32px 0 30px 0; box-shadow:0 9px 36px 0 #81effe28;
+  opacity:.13;pointer-events:none;z-index:1;
+  filter:blur(4px) grayscale(.18);transform:scale(.96) rotateY(-32deg);
+  transition:opacity 1.03s,transform .92s,filter 0.55s;
 }
-body.dark-mode .section-panel {background:var(--glass-dark);}
+body.dark-mode .section-panel{background:var(--glass-dark);}
 .section-panel.active{
   opacity:1;filter:none;pointer-events:all;
   transform:scale(1) rotateY(0deg);z-index:2;
-  animation:panelIn .7s cubic-bezier(.51,.02,.31,.99);}
-@keyframes panelIn{
-  0%{transform:translateY(150px) scale(.82) rotateY(-60deg); opacity:.04;}
-  70%{transform:scale(1.1) rotateY(19deg);}
-  to{transform:translateY(0) scale(1) rotateY(0deg); opacity:1;}
+  animation:panelIn .7s cubic-bezier(.51,.02,.31,.99);
 }
-.section-panel .textcol{width:53%; min-width:250px; padding-right:15px;}
+@keyframes panelIn{
+  0%{transform:translateY(100px) scale(.9) rotateY(-30deg);opacity:0;}
+  70%{transform:scale(1.09) rotateY(19deg);}
+  to{transform:translateY(0) scale(1) rotateY(0deg);opacity:1;}
+}
+.section-panel .textcol{width:53%;min-width:230px;padding-right:14px;}
 .section-panel .media{flex:1;display:flex;justify-content:center;align-items:center;}
 .section-panel img.illus{
-  width:220px;height:220px;object-fit:cover;border-radius:25px;box-shadow:0 5px 34px #23f2ff97;opacity:0.97;
+  width:200px;height:200px;object-fit:cover;border-radius:20px;box-shadow:0 5px 34px #23f2ff97;opacity:0.97;
   animation:floatimg 4.5s ease-in-out infinite alternate;
 }
-@keyframes floatimg{0%{transform:translateY(7px);}100%{transform:translateY(-34px);}}
+@keyframes floatimg{0%{transform:translateY(7px);}100%{transform:translateY(-25px);}}
 .section-panel h2{
   letter-spacing:1.1px;
-  color:#1ef9ed;font-size:1.45em;
-  background:linear-gradient(90deg,#12e8fa 0%,#27e1c1 100%);
+  color:#09defd;font-size:1.37em;font-weight:700;margin-bottom:13px;margin-top:0;
+  background:linear-gradient(90deg,#13e8c7 10%,#31f1ff 90%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
 }
 .section-panel p,.section-panel ul{
-  font-size:1.09em;line-height:1.69;color:#232c3a;
-  font-weight:480;
+  font-size:1.08em;line-height:1.67;color:#293048;
 }
-body.dark-mode .section-panel p,body.dark-mode .section-panel ul{color:#dcf8ff;}
-.section-panel ul{margin-top:8px;}
-#projects .card-list{gap:21px;}
+body.dark-mode .section-panel p, body.dark-mode .section-panel ul{color:#e1fffd;}
+.section-panel ul{margin-top:7px;}
+#projects .card-list{gap:20px;}
 #projects .project-card{
-  background:rgba(21,41,60,0.92);border-radius:18px;
-  box-shadow:0 2px 32px #17e4ff42;
-  padding-bottom:0;animation:projectInZ 1.1s; margin-bottom:11px;
+  background:rgba(21,41,60,0.92);border-radius:15px;margin-bottom:9px;
+  box-shadow:0 2px 24px #31f1ff30; padding-bottom:0;
+  transition:.24s;
 }
-@keyframes projectInZ{0%{opacity:0;transform:scale(.84) rotateY(-90deg);}60%{transform:scale(1.13) rotateY(16deg);}to{opacity:1;transform:scale(1) rotateY(0deg);}}
-.project-card:hover{box-shadow:0 8px 72px #3afbfad0;}
-.project-img{width:100%;height:120px;object-fit:cover;}
-.project-title{margin:0;color:#19fcec;font-size:1.18em;font-weight:600;cursor:pointer;transition:color 0.23s;}
-.project-title:hover{color:#0fadeb;}
-.project-details{max-height:0;overflow:hidden;transition:max-height .55s,padding .45s;opacity:.29;background:rgba(19,44,58,0.88);border-radius:0 0 16px 16px;padding:0 13px;}
-.project-card.open .project-details{max-height:200px;opacity:1;padding:13px 18px 12px 19px;}
+@keyframes projectInZ{0%{opacity:0;transform:scale(.82) rotateY(-90deg);}60%{transform:scale(1.08) rotateY(13deg);}to{opacity:1;transform:scale(1) rotateY(0deg);}}
+.project-card:hover{box-shadow:0 8px 52px #27e1c1b0;}
+.project-img{width:100%;height:110px;object-fit:cover;}
+.project-title{margin:0;color:#09defd;font-size:1.08em;font-weight:600;cursor:pointer;transition:color 0.19s;}
+.project-title:hover{color:#2fc2e4;}
+.project-details{max-height:0;overflow:hidden;transition:max-height .41s,padding .35s;opacity:.29;background:rgba(19,39,58,0.85);border-radius:0 0 11px 11px;padding:0 10px;}
+.project-card.open .project-details{max-height:170px;opacity:1;padding:10px 14px 10px 13px;}
 .card-list{display:grid;grid-template-columns:1fr 1fr;}
 @media(max-width:890px){.card-list{grid-template-columns:1fr;}}
-.skill-row{display:flex;gap:32px;}
-.skill-listing{background:rgba(12,237,250,.09);border-radius:12px;padding:17px 13px;margin-bottom:9px;}
-.skill-title{color:#12e8fa;font-weight:600;font-size:1.09em;}
-ul.skill-list{margin:7px 0 2px 20px;}
-.cert-badge{display:inline-block;background:#12e8fa;padding:10px 23px;margin:11px 9px 13px 7px;color:#181d25;border-radius:40px;font-weight:600;font-size:1.05rem;box-shadow:0 3px 18px #27e1c130;user-select:none;transition:background .3s,color .3s,box-shadow .3s,transform .26s;}
-body.dark-mode .cert-badge{background:#27e1c1;color:#f2fff6;}
-.cert-badge:hover{background:#08fdde;color:#0e0b19;box-shadow:0 0 32px #22fffb99;transform:scale(1.11);}
+.skill-row{display:flex;gap:23px;}
+.skill-listing{background:rgba(13,227,250,.08);border-radius:12px;padding:13px 10px;}
+.skill-title{color:#31f1ff;font-weight:700;font-size:1.02em;}
+ul.skill-list{margin:6px 0 2px 17px;}
+.cert-badge{display:inline-block;background:#13e8c7;padding:9px 19px;margin:9px 6px 11px 5px;color:#191d25;border-radius:40px;font-weight:600;font-size:1em;box-shadow:0 3px 12px #13e8c780;user-select:none;transition:background .4s,color .4s,transform .2s;}
+body.dark-mode .cert-badge{background:#1ad1ae;color:#e2fff2;}
+.cert-badge:hover{background:#09defd;color:#09121e;box-shadow:0 0 26px #31f1ff50;transform:scale(1.07);}
 #contact{
-  margin:60px auto 30px auto;max-width:640px;
-  background:rgba(21,35,57,0.97);
-  border-radius:22px;
-  padding:22px 36px;
-  box-shadow:0 0 30px #55fffa4a;
-  color:#2efcdd;text-align:center;
+  margin:50px auto 30px auto;max-width:600px;
+  background:rgba(36,49,69,0.95);border-radius:16px;
+  padding:20px 28px;
+  box-shadow:0 0 22px #13e8c770;
+  color:#12eafc;text-align:center;
 }
-body.dark-mode #contact{background:rgba(14,27,45,0.96);}
-#contact h2{color:#12e8fa;}
-#contact a{color:#12e8fa;text-decoration:none;}
+body.dark-mode #contact{background:rgba(14,27,45,0.94);}
+#contact h2{color:#13e8c7;}
+#contact a{color:#13e8c7;text-decoration:none;}
 #contact a:hover{text-decoration:underline;}
 ::-webkit-scrollbar{height:0;width:0;}
   </style>
@@ -185,6 +163,21 @@ body.dark-mode #contact{background:rgba(14,27,45,0.96);}
 <main>
 <div class="sections" id="sections">
   <!-- ... as in your code: About/Education/.../Skills sections ... -->
+  <section class="section-panel active" id="about">
+    <div class="textcol">
+      <h2>About Me</h2>
+      <p>A motivated fresher seeking top tech opportunities to grow and use my skillset for organization success.</p>
+      <ul>
+        <li>Quick learner & proactive problem solver</li>
+        <li>Great team spirit and communication</li>
+        <li>Love to work on innovative products & tech</li>
+      </ul>
+    </div>
+    <div class="media">
+      <img class="illus" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="About Illustration">
+    </div>
+  </section>
+  <!-- ...repeat for Education, Internships, Achievements, Projects, Skills... -->
   <section class="section-panel" id="certifications">
     <div class="textcol">
       <h2>Certifications</h2>
@@ -195,18 +188,18 @@ body.dark-mode #contact{background:rgba(14,27,45,0.96);}
       <span class="cert-badge">Python, GUVI and IITM</span>
       <span class="cert-badge">Diploma of Completion, UiPath Academy – Build Your First Process With Studio</span>
       <span class="cert-badge">ChatGPT for Everyone – GUVI</span>
-      <span class="cert-badge">  Palo Alto Networks Cybersecurity Academy<br>Student Certificate of Completion</span>                      
+      <span class="cert-badge">Palo Alto Networks Cybersecurity Academy Certificate</span>
       </div>
     </div>
     <div class="media">
       <img class="illus" src="https://images.unsplash.com/photo-1465101178521-c1a9136a67ab?auto=format&fit=crop&w=400&q=80" alt="Certification Illustration">
     </div>
   </section>
-  <!-- ... rest of your other sections ... -->
+  <!-- ...other section-panels... -->
 </div>
 </main>
 <script>
-// -- Toggle functionality
+// Theme toggle
 const themeToggle = document.getElementById('themeToggle');
 function setTheme(isDark) {
   if(isDark) {
@@ -218,14 +211,13 @@ function setTheme(isDark) {
   }
 }
 themeToggle.addEventListener('click',()=>setTheme(!document.body.classList.contains('dark-mode')));
-window.addEventListener('DOMContentLoaded',()=>{
-  setTheme(localStorage.getItem('theme')==='dark');
-});
-// -- Section slide navigation (fixed)
-const navs=document.querySelectorAll('nav a');
-const sections=document.querySelectorAll('.section-panel');
-const container=document.getElementById('sections');
-let current=0;
+window.addEventListener('DOMContentLoaded',()=>{setTheme(localStorage.getItem('theme')==='dark');});
+
+// Flawless slide navigation
+const navs = document.querySelectorAll('nav a');
+const sections = document.querySelectorAll('.section-panel');
+const container = document.getElementById('sections');
+let current = 0;
 function showSection(idx){
   container.style.transform=`translateX(-${idx*100}vw)`;
   navs.forEach(n=>n.classList.remove('active'));
