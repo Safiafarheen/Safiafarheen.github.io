@@ -306,25 +306,78 @@ opacity:.15;margin-left:3px;background:none;padding:0 2px;pointer-events:none;}
     </div>
   </section>
   <section class="section-panel" id="certifications">
-    <div class="section-content">
-      <h2>Certifications</h2>
-      <ul>
-        <li>Java Fullstack Development, TNS India Foundation, Capgemini</li>
-        <li>C, Spoken Tutorial Project IIT Bombay</li>
-        <li>Java, Spoken Tutorial Project IIT Bombay</li>
-        <li>Cpp, Spoken Tutorial IIT Bombay</li>
-        <li>Python, GUVI and IITM</li>
-        <li>Diploma of Completion, UiPath Academy – Build Your First Process With Studio</li>
-        <li>ChatGPT for Everyone – GUVI</li>
-        <li>Palo Alto Networks Cybersecurity Academy - Student Certificate of Completion</li>
-      </ul>
+  <div class="section-content">
+    <h2 id="cert-header" style="position:relative;z-index:2;">
+      Certifications
+      <span id="cert-glow"></span>
+    </h2>
+    <ul id="cert-list" style="list-style-position:inside; padding-left:0;">
+      <li class="cert-item">Java Fullstack Development, TNS India Foundation, Capgemini</li>
+      <li class="cert-item">C, Spoken Tutorial Project IIT Bombay</li>
+      <li class="cert-item">Java, Spoken Tutorial Project IIT Bombay</li>
+      <li class="cert-item">Cpp, Spoken Tutorial IIT Bombay</li>
+      <li class="cert-item">Python, GUVI and IITM</li>
+      <li class="cert-item">Diploma of Completion, UiPath Academy – Build Your First Process With Studio</li>
+      <li class="cert-item">ChatGPT for Everyone – GUVI</li>
+      <li class="cert-item">Palo Alto Networks Cybersecurity Academy - Student Certificate of Completion</li>
+    </ul>
+  </div>
+  <div class="section-media">
+    <div class="section-imgbox cert-img-pulse">
+      <img class="section-img" src="https://images.unsplash.com/photo-1465101178521-c1a9136a67ab?auto=format&fit=crop&w=700&q=80" alt="Certifications" onerror="showFallback(this)">
     </div>
-    <div class="section-media">
-      <div class="section-imgbox">
-        <img class="section-img" src="https://images.unsplash.com/photo-1465101178521-c1a9136a67ab?auto=format&fit=crop&w=700&q=80" alt="Certifications" onerror="showFallback(this)">
-      </div>
-    </div>
-  </section>
+  </div>
+  <style>
+  /* Neon animation for section heading */
+  #cert-header {
+    animation: certGlow 1.2s ease;
+  }
+  @keyframes certGlow {
+    0% { text-shadow:0 0 1px #fff3, 0 0 11px #ae5af1, 0 0 3px #21d6fa;}
+    65% { text-shadow:0 0 9px #21d6fa,0 0 36px #ae5af1;}
+    100% { text-shadow:0 0 2px #fff3,0 0 16px #21d6fa;}
+  }
+  /* Cert items fade stagger */
+  .cert-item {
+    opacity:0; transform:translateX(-35px) scale(.99);
+    animation: certFadeIn .7s cubic-bezier(.48,0,.45,1) forwards;
+  }
+  @keyframes certFadeIn {
+    0%{opacity:0;transform:translateX(-35px) scale(.99);}
+    60%{opacity:.77;transform:translateX(8px) scale(1.04);}
+    100%{opacity:1;transform:translateX(0) scale(1);}
+  }
+  /* Pulsing image effect when panel is visible */
+  .section-panel.active .cert-img-pulse {
+    animation: certImgPulse 2.5s infinite alternate;
+  }
+  @keyframes certImgPulse {
+    0% {box-shadow:0 0 46px #21d6fa5c,0 0 0 #fff2;}
+    60%{box-shadow:0 0 62px #ae5af19e,0 0 0 #fff5;}
+    100% {box-shadow:0 0 44px #21d6fa45,0 0 0 #fff0;}
+  }
+  </style>
+  <script>
+  // Animate certifications: each <li> in #cert-list gets a staggered delay
+  document.addEventListener('DOMContentLoaded',function(){
+    var panel = document.getElementById('certifications');
+    var certList = panel.querySelectorAll('.cert-item');
+    let attachedAnim = false;
+    const observer = new IntersectionObserver(function(entries){
+      entries.forEach(entry=>{
+        if(entry.isIntersecting && !attachedAnim){
+          certList.forEach(function(item, idx){
+            item.style.animationDelay = (0.14 * idx + 0.2) + "s";
+          });
+          attachedAnim = true;
+        }
+      });
+    },{threshold:.4});
+    observer.observe(panel);
+  });
+  </script>
+</section>
+
   <section class="section-panel" id="contact">
     <div class="section-content">
       <h2>Contact</h2>
